@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /test
+spring:
+  application:
+    name: test-service
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
+        group: data-center-group
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/niuke?useSSL=true&useUnicode=true&cerEncoding=utf8
+    username: root
+    password: 123456
+
+
+
+connection:
+  pool:
+    driver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
+    username: root
+    password: 123456
+    initSize: 3
+    maxSize: 10
+    timeout: 10000
+
+
+
