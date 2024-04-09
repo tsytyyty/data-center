@@ -1,5 +1,6 @@
-package com.data.center.domain.Do;
+package com.data.center.pojo.Do;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UnloadingTable {       //卸货表
+public class LoadingTable {     //装货表
 
     //id
     private long id;
@@ -51,6 +52,7 @@ public class UnloadingTable {       //卸货表
     private String destinationPlace;
 
     //备注（错误信息）
+    @TableField(exist = false)
     private String remark;
 
 }

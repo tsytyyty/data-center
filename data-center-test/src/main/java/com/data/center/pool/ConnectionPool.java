@@ -1,14 +1,12 @@
 package com.data.center.pool;
 
-import com.data.center.utils.DbUtil;
+import com.data.center.service.Impl.OpenDataServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -16,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class ConnectionPool implements IConnectionPool {
 
-    private DbUtil dbUtil = new DbUtil();
+    private OpenDataServiceImpl dbUtil = new OpenDataServiceImpl();
 
     /**
      * 空闲连接池
@@ -76,6 +74,7 @@ public class ConnectionPool implements IConnectionPool {
             try {
                 if (connection.isValid(2000)) {
                     busyConnectPool.offer(connection);
+//                    connection.setCallTime(System.currentTimeMillis());
                     return connection;
                 }
             } catch (SQLException e) {
@@ -137,13 +136,27 @@ public class ConnectionPool implements IConnectionPool {
      */
     @Scheduled(fixedRate = 60 * 1000)
     public void check() {
-        for (int i = 0; i < activeSize.get(); i++) {
+        for (int i = 0; i < freeConnectPool.size(); i++) {
             Connection connection = freeConnectPool.poll();
+//            long l = System.currentTimeMillis() - connection.getCallTime();
             try {
                 boolean valid = connection.isValid(2000);
-                if (!valid) {
-                    connection.close();
-                    // 如果连接不可用，则创建一个新的连接
+//                // 如果连接 超时、总数大于3
+//                if (l > 10 * 60 * 1000 && activeSize.get() > 3) {
+//                    activeSize.decrementAndGet();
+//                    continue;
+//                }
+//                // 如果连接失效，则重新创建一个连接
+//                if (!valid && l < 10 * 60 * 1000){
+//                    connection = dbUtil.createConnection();
+//                }
+                // 如果连接失效，并且连接数大于3，则删除连接
+                if (!valid && activeSize.get() > 3) {
+                    activeSize.decrementAndGet();
+                    continue;
+                }
+                // 如果连接失效，并且连接数小于等于3，则重新创建一个连接
+                if (!valid && activeSize.get() <= 3) {
                     connection = dbUtil.createConnection();
                 }
                 freeConnectPool.offer(connection);// 放进一个可用的连接

@@ -21,10 +21,16 @@ spring:
 
 connection:
   pool:
-    driver: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
-    username: root
-    password: 123456
+    driver: dm.jdbc.driver.DmDriver
+    url: jdbc:dm://localhost:5236/DATA?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    username: SYSDBA
+    password: SYSDBA
+
+#    driver: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
+#    username: root
+#    password: 123456
+
     initSize: 3
     maxSize: 10
     timeout: 10000

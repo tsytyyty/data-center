@@ -1,48 +1,42 @@
 package com.data.center.utils;
 
-import com.data.center.domain.Do.CustomerInformation;
-import com.data.center.domain.Do.LoadingTable;
-import com.data.center.domain.Do.LogisticsInformation;
-import com.data.center.domain.Do.UnloadingTable;
-import com.data.center.domain.dto.DataSource;
+import com.data.center.pojo.Do.CustomerInformation;
+import com.data.center.pojo.Do.LoadingTable;
+import com.data.center.pojo.Do.LogisticsInformation;
+import com.data.center.pojo.Do.UnloadingTable;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.T;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
 @Slf4j
-public class DatabaseAcquisitionUtil {
+public class AcquisitionDatabaseUtil {
 
     /**
      * 对单个数据源执行数据采集
      */
     public static Map<String, List<T>> acquisitionToMap(Connection con, String dbName, Map<String, String> dbTable){
         Map<String, List<T>> map = new HashMap<>();
-        PreparedStatement p = null;
         ResultSet resultSet = null;
         dbTable.forEach((tableName, tableType) -> {
             switch (tableType){
                 case "LoadingTable":
-                    List<T> loadingTableList = loadingTableData(con, dbName, tableName, p, resultSet);
+                    List<T> loadingTableList = loadingTableData(con, dbName, tableName, resultSet);
                     map.put(tableName, loadingTableList);
                     break;
                 case "UnloadingTable":
-                    List<T> unloadingTableList = unloadingTableData(con, dbName, tableName, p, resultSet);
+                    List<T> unloadingTableList = unloadingTableData(con, dbName, tableName, resultSet);
                     map.put(tableName, unloadingTableList);
                     break;
                 case "CustomerInformation":
-                    List<T> customerInformationList = customerInformationData(con, dbName, tableName, p, resultSet);
+                    List<T> customerInformationList = customerInformationData(con, dbName, tableName, resultSet);
                     map.put(tableName, customerInformationList);
                     break;
                 case "LogisticsInformation":
-                    List<T> logisticsInformationList = logisticsInformationData(con, dbName, tableName, p, resultSet);
+                    List<T> logisticsInformationList = logisticsInformationData(con, dbName, tableName, resultSet);
                     map.put(tableName, logisticsInformationList);
                     break;
             }
@@ -53,11 +47,11 @@ public class DatabaseAcquisitionUtil {
     /**
      * 装货表数据采集
      */
-    public static <T> List<T> loadingTableData(Connection con, String dbName, String tableName, PreparedStatement p, ResultSet resultSet){
+    public static <T> List<T> loadingTableData(Connection con, String dbName, String tableName, ResultSet resultSet){
         List<LoadingTable> list = new ArrayList<>();
-        String sql = "select " + getColumn("LoadingTable") + " from " + dbName + "." + tableName;
+        String sql = "select  * " + " from " + dbName + "." + tableName;
         try {
-             resultSet = p.executeQuery(sql);
+             resultSet = con.prepareStatement(sql).executeQuery();
         } catch (SQLException e) {
             log.error(e.getMessage() + e);
         }
@@ -65,18 +59,18 @@ public class DatabaseAcquisitionUtil {
             while (resultSet.next()){
                 LoadingTable loadingTable = new LoadingTable(
                         0,
-                        resultSet.getString("ship_companies"),
-                        resultSet.getString("ship_name"),
-                        resultSet.getDate("work_begin_time"),
-                        resultSet.getDate("work_end_time"),
-                        resultSet.getDate("departure_time"),
-                        resultSet.getDate("arrive_time"),
-                        resultSet.getString("port"),
-                        resultSet.getString("logistics_id"),
-                        resultSet.getString("container_id"),
-                        resultSet.getInt("container_size"),
-                        resultSet.getString("departure_place"),
-                        resultSet.getString("destination_place"),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getDate(4),
+                        resultSet.getDate(5),
+                        resultSet.getDate(6),
+                        resultSet.getDate(7),
+                        resultSet.getString(8),
+                        resultSet.getString(9),
+                        resultSet.getString(10),
+                        resultSet.getInt(11),
+                        resultSet.getString(12),
+                        resultSet.getString(13),
                         null
                 );
                 list.add(loadingTable);
@@ -91,11 +85,11 @@ public class DatabaseAcquisitionUtil {
     /**
      * 卸货表数据采集
      */
-    public static <T> List<T> unloadingTableData(Connection con, String dbName, String tableName, PreparedStatement p, ResultSet resultSet) {
+    public static <T> List<T> unloadingTableData(Connection con, String dbName, String tableName, ResultSet resultSet) {
         List<UnloadingTable> list = new ArrayList<>();
-        String sql = "select " + getColumn("UnloadingTable") + " from " + dbName + "." + tableName;
+        String sql = "select  * " + " from " + dbName + "." + tableName;
         try {
-            resultSet = p.executeQuery(sql);
+            resultSet = con.prepareStatement(sql).executeQuery();
         } catch (SQLException e) {
             log.error(e.getMessage() + e);
         }
@@ -103,18 +97,18 @@ public class DatabaseAcquisitionUtil {
             while (resultSet.next()){
                 UnloadingTable unloadingTable = new UnloadingTable(
                         0,
-                        resultSet.getString("ship_companies"),
-                        resultSet.getString("ship_name"),
-                        resultSet.getDate("work_begin_time"),
-                        resultSet.getDate("work_end_time"),
-                        resultSet.getDate("departure_time"),
-                        resultSet.getDate("arrive_time"),
-                        resultSet.getString("port"),
-                        resultSet.getString("logistics_id"),
-                        resultSet.getString("container_id"),
-                        resultSet.getInt("container_size"),
-                        resultSet.getString("departure_place"),
-                        resultSet.getString("destination_place"),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getDate(4),
+                        resultSet.getDate(5),
+                        resultSet.getDate(6),
+                        resultSet.getDate(7),
+                        resultSet.getString(8),
+                        resultSet.getString(9),
+                        resultSet.getString(10),
+                        resultSet.getInt(11),
+                        resultSet.getString(12),
+                        resultSet.getString(13),
                         null
                 );
                 list.add(unloadingTable);
@@ -129,11 +123,11 @@ public class DatabaseAcquisitionUtil {
     /**
      * 提单信息数据采集
      */
-    public static <T> List<T> logisticsInformationData(Connection con, String dbName, String tableName, PreparedStatement p, ResultSet resultSet) {
+    public static <T> List<T> logisticsInformationData(Connection con, String dbName, String tableName, ResultSet resultSet) {
         List<LogisticsInformation> list = new ArrayList<>();
-        String sql = "select " + getColumn("LogisticsInformation") + " from " + dbName + "." + tableName;
+        String sql = "select  * " + " from " + dbName + "." + tableName;
         try {
-            resultSet = p.executeQuery(sql);
+            resultSet = con.prepareStatement(sql).executeQuery();
         } catch (SQLException e) {
             log.error(e.getMessage() + e);
         }
@@ -141,13 +135,13 @@ public class DatabaseAcquisitionUtil {
             while (resultSet.next()){
                 LogisticsInformation logisticsInformation = new LogisticsInformation(
                         0,
-                        resultSet.getString("logistics_id"),
-                        resultSet.getString("owner"),
-                        resultSet.getString("owner_id"),
-                        resultSet.getString("company_id"),
-                        resultSet.getString("container_id"),
-                        resultSet.getString("goods_name"),
-                        resultSet.getInt("weight"),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
+                        resultSet.getString(6),
+                        resultSet.getString(7),
+                        resultSet.getInt(8),
                         null
                 );
                 list.add(logisticsInformation);
@@ -162,11 +156,11 @@ public class DatabaseAcquisitionUtil {
     /**
      * 客户信息数据采集
      */
-    public static <T> List<T> customerInformationData(Connection con, String dbName, String tableName, PreparedStatement p, ResultSet resultSet) {
+    public static <T> List<T> customerInformationData(Connection con, String dbName, String tableName, ResultSet resultSet) {
         List<CustomerInformation> list = new ArrayList<>();
-        String sql = "select " + getColumn("CustomerInformation") + " from " + dbName + "." + tableName;
+        String sql = "select  * " + " from " + dbName + "." + tableName;
         try {
-            resultSet = p.executeQuery(sql);
+            resultSet = con.prepareStatement(sql).executeQuery();
         } catch (SQLException e) {
             log.error(e.getMessage() + e);
         }
@@ -174,10 +168,10 @@ public class DatabaseAcquisitionUtil {
             while (resultSet.next()){
                 CustomerInformation customerInformation = new CustomerInformation(
                         0,
-                        resultSet.getString("name"),
-                        resultSet.getString("id_card"),
-                        resultSet.getString("phone_number"),
-                        resultSet.getString("address"),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
                         null
                 );
                 list.add(customerInformation);

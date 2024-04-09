@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.example</groupId>
+        <groupId>com.data.center</groupId>
         <artifactId>data_center_microservices</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -18,6 +18,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.data.center</groupId>
+            <artifactId>data-center-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -52,29 +57,24 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/DmJdbcDriver18.jar</systemPath>
         </dependency>
-        <!-- mybatisPlus 核心库 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.3.1</version>
-        </dependency>
-        <!-- druid依赖 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.0</version>
-        </dependency>
+
+<!--        &lt;!&ndash; druid依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.1.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>21.0</version>
         </dependency>
-<!--        将map映射为对象-->
-        <dependency>
-            <groupId>org.modelmapper</groupId>
-            <artifactId>modelmapper</artifactId>
-            <version>2.4.3</version>
-        </dependency>
+<!--&lt;!&ndash;        将map映射为对象&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.modelmapper</groupId>-->
+<!--            <artifactId>modelmapper</artifactId>-->
+<!--            <version>2.4.3</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -84,6 +84,17 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-s3 -->
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-s3</artifactId>
+            <version>1.12.500</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.8</version>
         </dependency>
 
 

@@ -1,16 +1,14 @@
 package com.data.center.utils;
 
-import com.data.center.domain.dto.DataSource;
+import com.data.center.contant.AcquisitionConstant;
+import com.data.center.factory.DataSource;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
-public class DataSourceCache implements Constant {
+public class DataSourceCache implements AcquisitionConstant {
 
     private volatile static DataSourceCache instance;   //volatile防指令重排
 

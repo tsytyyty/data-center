@@ -1,4 +1,4 @@
-package com.data.center.domain.Do;
+package com.data.center.pojo.Do;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

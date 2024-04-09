@@ -1,21 +1,28 @@
 package com.data.center.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.data.center.domain.Do.UnloadingTable;
+import com.data.center.pojo.Do.UnloadingTable;
 import com.data.center.mapper.UnloadingTableMapper;
+import com.data.center.utils.FileUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.data.center.utils.FileUtil.splitResult;
+
 @Service
 public class UnloadingTableService extends ServiceImpl<UnloadingTableMapper, UnloadingTable> {
     public void importDataFromExcel(String filePath) {
@@ -70,6 +77,45 @@ public class UnloadingTableService extends ServiceImpl<UnloadingTableMapper, Unl
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+
+    public void unloadingTable(String filePath) throws IOException, ParseException {
+
+        //数据解析
+        FileInputStream fin = new FileInputStream(filePath);
+        InputStreamReader reader = new InputStreamReader(fin, FileUtil.getFileCode(fin));
+        BufferedReader buffReader = new BufferedReader(reader);
+        String strTmp = "";
+        strTmp = buffReader.readLine();
+
+        List<UnloadingTable> list = new ArrayList<>();
+
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+
+        while((strTmp = buffReader.readLine())!= null){
+            String[] split = strTmp.split("',");
+
+            //构建卸货表实体对象
+            UnloadingTable unloadingTable = new UnloadingTable();
+            unloadingTable.setShipCompanies(splitResult(split[0]));
+            unloadingTable.setShipName(splitResult(split[1]));
+            unloadingTable.setWorkBeginTime(df.parse(splitResult(split[2])));
+            unloadingTable.setWorkEndTime(df.parse(splitResult(split[3])));
+            unloadingTable.setDepartureTime(df.parse(splitResult(split[4])));
+            unloadingTable.setArriveTime(df.parse(splitResult(split[5])));
+            unloadingTable.setPort(splitResult(split[6]));
+            unloadingTable.setLogisticsId(splitResult(split[7]));
+            unloadingTable.setContainerId(splitResult(split[8]));
+            unloadingTable.setContainerSize(Integer.parseInt(splitResult(split[9])));
+            unloadingTable.setDeparturePlace(splitResult(split[10]));
+            unloadingTable.setDestinationPlace(splitResult(split[11]));
+            list.add(unloadingTable);
+        }
+        buffReader.close();
+//        list.forEach(System.out::println);
+        saveBatch(list);
     }
 
 }

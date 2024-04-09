@@ -1,9 +1,4 @@
-package com.data.center.domain.dto;
-
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package com.data.center.factory;
 
 import java.sql.SQLException;
 import java.util.concurrent.Callable;

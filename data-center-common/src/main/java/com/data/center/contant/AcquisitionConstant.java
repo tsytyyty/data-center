@@ -1,6 +1,6 @@
-package com.data.center.utils;
+package com.data.center.contant;
 
-public interface Constant {
+public interface AcquisitionConstant {
 
     /**
      * 数据源类型

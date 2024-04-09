@@ -1,14 +1,14 @@
-package com.data.center.domain.Do;
+package com.data.center.factory;
 
-import com.data.center.domain.dto.DataSource;
-import com.data.center.utils.Constant;
+import com.data.center.contant.AcquisitionConstant;
+import com.data.center.factory.DataSource;
 import com.data.center.utils.DataSourceCache;
-import com.data.center.utils.DatabaseAcquisitionUtil;
+import com.data.center.utils.AcquisitionDatabaseUtil;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.T;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,10 +18,17 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Callable;
 
-
-@Data
 @Slf4j
-public class MysqlDataSource implements DataSource, Constant {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class MysqlDataSource implements DataSource, AcquisitionConstant {
+
+    //id
+    private int id;
+
+    //名称
+    private String name;
 
     //数据库地址
     private String url;
@@ -79,6 +86,7 @@ public class MysqlDataSource implements DataSource, Constant {
             if (conn.isValid(2000)){
                 DataSourceCache.getInstance().putConnection(getHashCode(), conn);
                 return true;
+
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
@@ -95,7 +103,7 @@ public class MysqlDataSource implements DataSource, Constant {
                 connection = getConnection(DATA_SOURCE_CONNECT_TIMEOUT);
                 DataSourceCache.getInstance().putConnection(getHashCode(), connection);
             }
-            Map<String, List<T>> map = DatabaseAcquisitionUtil.acquisitionToMap(connection, dbName, dbTable);
+            Map<String, List<T>> map = AcquisitionDatabaseUtil.acquisitionToMap(connection, dbName, dbTable);
             return map;
         };
     }
@@ -105,3 +113,4 @@ public class MysqlDataSource implements DataSource, Constant {
         return Objects.hash(url, username, password, dbName, dbTable);
     }
 }
+

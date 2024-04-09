@@ -1,13 +1,12 @@
 package com.data.center.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.data.center.domain.Do.CustomerInformation;
+import com.data.center.pojo.Do.CustomerInformation;
 import com.data.center.mapper.CustomerInformationMapper;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.FileInputStream;

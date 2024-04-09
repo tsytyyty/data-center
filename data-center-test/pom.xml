@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.example</groupId>
+        <groupId>com.data.center</groupId>
         <artifactId>data_center_microservices</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -57,13 +57,8 @@
             <groupId>com.dameng</groupId>
             <artifactId>Dm8JdbcDriver18</artifactId>
             <version>8.1.1.193</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.dameng</groupId>
-            <artifactId>Dm8JdbcDriver18</artifactId>
-            <version>8.1.1.193</version>
-            <scope>compile</scope>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/DmJdbcDriver18.jar</systemPath>
         </dependency>
 
 
