@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,13 +15,12 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName(value ="data_source")
+@TableName(value ="data_source", autoResultMap = true)
 public class DataSourceDo implements Serializable {
     /**
      * 主键，数据源ID
      */
-    @TableId(type = IdType.AUTO)
-    private Integer id;
+    private String id;
 
     /**
      * 名称
@@ -55,7 +55,8 @@ public class DataSourceDo implements Serializable {
     /**
      * 数据表（文件名）- 类型
      */
-    private Map<String,String> dataAndType;
+    @TableField(typeHandler = JacksonTypeHandler.class)
+    private Map<String, String> dataAndType;
 
     /**
      * 数据源类型

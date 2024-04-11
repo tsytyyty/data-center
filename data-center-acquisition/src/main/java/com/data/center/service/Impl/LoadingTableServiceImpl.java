@@ -1,9 +1,9 @@
-package com.data.center.service;
+package com.data.center.service.Impl;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.data.center.mapper.UnloadingTableMapper;
-import com.data.center.pojo.Do.UnloadingTable;
+import com.data.center.pojo.Do.LoadingTable;
+import com.data.center.mapper.LoadingTableMapper;
+import com.data.center.service.LoadingTableService;
 import com.data.center.utils.FileUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -24,7 +24,9 @@ import java.util.List;
 
 import static com.data.center.utils.FileUtil.splitResult;
 
-public interface UnloadingTableService extends IService<UnloadingTable> {
-
+@Service
+public class LoadingTableServiceImpl extends ServiceImpl<LoadingTableMapper, LoadingTable> implements LoadingTableService {
 
 }
+
+

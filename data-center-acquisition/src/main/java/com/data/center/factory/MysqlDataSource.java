@@ -10,12 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.formula.functions.T;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.sql.*;
+import java.util.*;
 import java.util.concurrent.Callable;
 
 @Slf4j
@@ -25,7 +21,7 @@ import java.util.concurrent.Callable;
 public class MysqlDataSource implements DataSource, AcquisitionConstant {
 
     //id
-    private int id;
+    private String id;
 
     //名称
     private String name;
@@ -79,38 +75,125 @@ public class MysqlDataSource implements DataSource, AcquisitionConstant {
     }
 
     @Override
-    public boolean testConnect() throws ClassNotFoundException {
+    public int testConnect() throws Exception {
         Class.forName(DATA_SOURCE_DRIVER_MYSQL);
+        Connection conn = null;
         try {
-            Connection conn = DriverManager.getConnection(url, username, password);//用参数得到连接对象
-            if (conn.isValid(2000)){
-                DataSourceCache.getInstance().putConnection(getHashCode(), conn);
-                return true;
-
+            conn = DriverManager.getConnection(url, username, password);//用参数得到连接对象
+            if (!conn.isValid(2000)){
+                throw new Exception("mysql——尝试与" + url + "建立时出现错误连接超时......");
             }
         } catch (Exception e) {
+            //连接测试失败
             log.error(e.getMessage(), e);
+            return 500;
         }
-        return false;
+        //将连接放入缓存
+        DataSourceCache.getInstance().putConnection(id, conn);
+        return 200;
     }
 
     @Override
-    public Callable<Object> dataAcquisition() {
+    public Map<String, Object> testConnectBeforeAdd() throws ClassNotFoundException, SQLException {
+        Map<String, Object> map = new HashMap<>();
+        List<String> errorList = new ArrayList<>();
+        Class.forName(DATA_SOURCE_DRIVER_MYSQL);
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url, username, password);
+            if (!conn.isValid(2000)){
+                throw new Exception("mysql——尝试与{}建立时出现错误连接超时......");
+            }
+        } catch (Exception e) {
+            //连接测试失败
+            log.error(e.getMessage(), e);
+            map.put("code", 500);
+            return map;
+        }
+        //检查数据源信息中文件是否存在
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("Show tables from " + dbName + ";");
+        Set<String> dbTableSet = new HashSet<>();
+
+        while(rs.next()) {
+            dbTableSet.add(rs.getString(1));
+        }
+        stmt.close();
+        rs.close();
+        dbTable.keySet().forEach(f -> {
+            if (!dbTableSet.contains(f)) {
+                errorList.add(f);
+            }
+        });
+        if (errorList.size() > 0) {
+            map.put("code", 404);
+            map.put("errorList", errorList);
+            return map;
+        }
+        map.put("code", 200);
+        map.put("connection",conn);
+        return map;
+    }
+
+//    @Override
+//    public Map<String, Object> testConnectBeforeUpdate() throws Exception {
+//        Map<String, Object> map = new HashMap<>();
+//        List<String> errorList = new ArrayList<>();
+//        Class.forName(DATA_SOURCE_DRIVER_MYSQL);
+//        Connection conn = null;
+//        try {
+//            conn = DriverManager.getConnection(url, username, password);//用参数得到连接对象
+//            if (!conn.isValid(2000)){
+//                throw new Exception("mysql——尝试与{}建立时出现错误连接超时......");
+//            }
+//        } catch (Exception e) {
+//            //连接测试失败
+//            log.error(e.getMessage(), e);
+//            map.put("code", 500);
+//            return map;
+//        }
+//        //检查数据源信息中文件是否存在
+//        Statement stmt = conn.createStatement();
+//        ResultSet rs = stmt.executeQuery("Show tables;");
+//        Set<String> dbTableSet = new HashSet<>();
+//
+//        while(rs.next()) {
+//            dbTableSet.add(rs.getString(1));
+//        }
+//        stmt.close();
+//        rs.close();
+//        dbTable.keySet().forEach(f -> {
+//            if (!dbTableSet.contains(f)) {
+//                errorList.add(f);
+//            }
+//        });
+//        if (errorList.size() > 0) {
+//            map.put("code", 404);
+//            map.put("errorList", errorList);
+//            return map;
+//        }
+//        map.put("code", 200);
+//        map.put("connection",conn);
+//        return map;
+//    }
+
+    @Override
+    public Callable<Map<String, List<Object>>> dataAcquisition() {
         return () -> {
             DataSourceCache cache = DataSourceCache.getInstance();
             Connection connection = (Connection) cache.getConnection(this);
             if (!connection.isValid(2000)) {
                 connection = getConnection(DATA_SOURCE_CONNECT_TIMEOUT);
-                DataSourceCache.getInstance().putConnection(getHashCode(), connection);
+                DataSourceCache.getInstance().putConnection(getId(), connection);
             }
-            Map<String, List<T>> map = AcquisitionDatabaseUtil.acquisitionToMap(connection, dbName, dbTable);
+            Map<String, List<Object>> map = AcquisitionDatabaseUtil.acquisitionToMap(connection, dbName, dbTable);
             return map;
         };
     }
 
     @Override
-    public Integer getHashCode() {
-        return Objects.hash(url, username, password, dbName, dbTable);
+    public String getUUID() {
+        return getId();
     }
 }
 

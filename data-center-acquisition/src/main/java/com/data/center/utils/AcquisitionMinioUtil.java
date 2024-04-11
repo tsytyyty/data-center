@@ -13,9 +13,9 @@ import java.util.Map;
 
 public class AcquisitionMinioUtil {
 
-    public static Map<String, List<T>> acquisitionToList(AmazonS3 client, String bucketName, Map<String, String> file) {
+    public static Map<String, List<Object>> acquisitionToList(AmazonS3 client, String bucketName, Map<String, String> file) {
         // 列出文件
-        Map<String, List<T>> map = new HashMap<>();
+        Map<String, List<Object>> map = new HashMap<>();
         ObjectListing objectListing = client.listObjects(bucketName);
         List<S3ObjectSummary> objectSummaries = objectListing.getObjectSummaries();
         objectSummaries.forEach(s3ObjectSummary -> {
@@ -24,24 +24,24 @@ public class AcquisitionMinioUtil {
                 try {
                     switch (file.get(fileName)) {
                         case "LoadingTable":
-                            List<T> loadingTableList = loadingTableData(client, bucketName, fileName);
+                            List<Object> loadingTableList = loadingTableData(client, bucketName, fileName);
                             map.put(fileName, loadingTableList);
                             break;
                         case "UnloadingTable":
-                            List<T> unloadingTableList = unloadingTableData(client, bucketName, fileName);
+                            List<Object> unloadingTableList = unloadingTableData(client, bucketName, fileName);
                             map.put(fileName, unloadingTableList);
                             break;
                         case "CustomerInformation":
-                            List<T> customerInformationList = customerInformationData(client, bucketName, fileName);
+                            List<Object> customerInformationList = customerInformationData(client, bucketName, fileName);
                             map.put(fileName, customerInformationList);
                             break;
                         case "LogisticsInformation":
-                            List<T> logisticsInformationList = logisticsInformationData(client, bucketName, fileName);
+                            List<Object> logisticsInformationList = logisticsInformationData(client, bucketName, fileName);
                             map.put(fileName, logisticsInformationList);
                             break;
                     }
                 } catch (IOException | ParseException e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
             }
         });
@@ -49,7 +49,7 @@ public class AcquisitionMinioUtil {
     }
 
 
-    public static <T> List<T> loadingTableData(AmazonS3 client, String bucketName, String fileName) throws IOException, ParseException {
+    public static List<Object> loadingTableData(AmazonS3 client, String bucketName, String fileName) throws IOException, ParseException {
         String[] split = fileName.split("\\.");
         String fileType = split[split.length - 1];
         switch (fileType){
@@ -63,7 +63,7 @@ public class AcquisitionMinioUtil {
         }
     }
 
-    public static <T> List<T> unloadingTableData(AmazonS3 client, String bucketName, String fileName) throws IOException, ParseException {
+    public static List<Object> unloadingTableData(AmazonS3 client, String bucketName, String fileName) throws IOException, ParseException {
         String[] split = fileName.split("\\.");
         String fileType = split[split.length - 1];
         switch (fileType){
@@ -77,7 +77,7 @@ public class AcquisitionMinioUtil {
         }
     }
 
-    public static <T> List<T> customerInformationData(AmazonS3 client, String bucketName, String fileName) throws IOException {
+    public static List<Object> customerInformationData(AmazonS3 client, String bucketName, String fileName) throws IOException {
         String[] split = fileName.split("\\.");
         String fileType = split[split.length - 1];
         switch (fileType){
@@ -91,7 +91,7 @@ public class AcquisitionMinioUtil {
         }
     }
 
-    public static <T> List<T> logisticsInformationData(AmazonS3 client, String bucketName, String fileName) throws IOException {
+    public static List<Object> logisticsInformationData(AmazonS3 client, String bucketName, String fileName) throws IOException {
         String[] split = fileName.split("\\.");
         String fileType = split[split.length - 1];
         switch (fileType){

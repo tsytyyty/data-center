@@ -18,25 +18,25 @@ public class AcquisitionDatabaseUtil {
     /**
      * 对单个数据源执行数据采集
      */
-    public static Map<String, List<T>> acquisitionToMap(Connection con, String dbName, Map<String, String> dbTable){
-        Map<String, List<T>> map = new HashMap<>();
+    public static Map<String, List<Object>> acquisitionToMap(Connection con, String dbName, Map<String, String> dbTable){
+        Map<String, List<Object>> map = new HashMap<>();
         ResultSet resultSet = null;
         dbTable.forEach((tableName, tableType) -> {
             switch (tableType){
                 case "LoadingTable":
-                    List<T> loadingTableList = loadingTableData(con, dbName, tableName, resultSet);
+                    List<Object> loadingTableList = loadingTableData(con, dbName, tableName, resultSet);
                     map.put(tableName, loadingTableList);
                     break;
                 case "UnloadingTable":
-                    List<T> unloadingTableList = unloadingTableData(con, dbName, tableName, resultSet);
+                    List<Object> unloadingTableList = unloadingTableData(con, dbName, tableName, resultSet);
                     map.put(tableName, unloadingTableList);
                     break;
                 case "CustomerInformation":
-                    List<T> customerInformationList = customerInformationData(con, dbName, tableName, resultSet);
+                    List<Object> customerInformationList = customerInformationData(con, dbName, tableName, resultSet);
                     map.put(tableName, customerInformationList);
                     break;
                 case "LogisticsInformation":
-                    List<T> logisticsInformationList = logisticsInformationData(con, dbName, tableName, resultSet);
+                    List<Object> logisticsInformationList = logisticsInformationData(con, dbName, tableName, resultSet);
                     map.put(tableName, logisticsInformationList);
                     break;
             }

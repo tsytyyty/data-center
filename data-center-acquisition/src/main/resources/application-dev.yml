@@ -12,14 +12,22 @@ spring:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
         group: data-center-group
   datasource:
-#    driver-class-name: dm.jdbc.driver.DmDriver
-#    url: jdbc:dm://localhost:5236/DATA?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
-#    username: SYSAUDITOR
-#    password: SYSAUDITOR
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
-    username: root
-    password: 123456
+    driver-class-name: dm.jdbc.driver.DmDriver
+    url: jdbc:dm://localhost:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    username: SYSDBA
+    password: SYSDBA
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
+#    username: root
+#    password: 123456
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.hexadecimal: debug
 
 #MyBatis-plus
 mybatis-plus:

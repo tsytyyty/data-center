@@ -1,11 +1,11 @@
-import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.ObjectListing;
 import com.data.center.AcquisitionApplication;
-import com.data.center.factory.DataSourceFactory;
-import com.data.center.factory.MinioDataSource;
 import com.data.center.pojo.Do.*;
-import com.data.center.pojo.dto.DataSourceDto;
+
 import com.data.center.service.CustomerInformationService;
+import com.data.center.service.Impl.CustomerInformationServiceImpl;
+import com.data.center.service.Impl.LoadingTableServiceImpl;
+import com.data.center.service.Impl.LogisticsInformationServiceImpl;
+import com.data.center.service.Impl.UnloadingTableServiceImpl;
 import com.data.center.service.LoadingTableService;
 import com.data.center.service.LogisticsInformationService;
 import com.data.center.service.UnloadingTableService;
@@ -29,34 +29,18 @@ import java.util.concurrent.*;
 public class Test {
 
     @Autowired
-    private CustomerInformationService customerInformationService;
+    private CustomerInformationServiceImpl customerInformationService;
     @Autowired
-    private LoadingTableService loadingTableService;
+    private LoadingTableServiceImpl loadingTableService;
     @Autowired
-    private UnloadingTableService unloadingTableService;
+    private UnloadingTableServiceImpl unloadingTableService;
     @Autowired
-    private LogisticsInformationService logisticsInformationService;
+    private LogisticsInformationServiceImpl logisticsInformationService;
 
 
     @org.junit.jupiter.api.Test
     public void test() throws ClassNotFoundException, IllegalAccessException, InstantiationException, ExecutionException, InterruptedException, SQLException, IOException, ParseException {
-        DataSourceDto dto = new DataSourceDto();
-        dto.setUrl("http://127.0.0.1:9090");
-        dto.setUsername("admin");
-        dto.setPassword("admin1234");
-        dto.setDbName("test");
-        Map<String, String> tableName = new HashMap<>();
-        tableName.put("customer_information", "CustomerInformation");
-        tableName.put("loading_table", "LoadingTable");
-        dto.setTableName(tableName);
-        MinioDataSource minio = (MinioDataSource) DataSourceFactory.getDataSource("minio", dto);
-        AmazonS3 amazonS3 = minio.getConnection(10000);
-        System.out.println(amazonS3.getUrl("test", "集装箱动态2021.csv"));
-        ObjectListing list = amazonS3.listObjects(minio.getBucketName());
-        list.getObjectSummaries().forEach(object -> {
-            System.out.println(object.getKey());
-        });
-
+        System.out.println(String.valueOf(UUID.randomUUID()));
 
     }
 
