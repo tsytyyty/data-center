@@ -21,13 +21,16 @@ public class AcquisitionController {
     /**
      * 成功：200   失败：500
      * @return
-     * 成功：返回四种数据数量
-     * 失败：返回错误数据源信息
+     *         result.put("customerInformation", customerInformationList.size ());     //客户信息数据量（int）
+     *         result.put("logisticsInformation", logisticsInformationList.size());    //提单信息数据量（int）
+     *         result.put("loadingTable", loadingTableList.size());                    //装货表数据量（int）
+     *         result.put("unloadingTable", unloadingTableList.size());                //卸货表数据量（int）
+     *         result.put("errorList", errorList);                                     //错误信息（List<String>）
      */
     @GetMapping("/data/acquisition")
     @Operation(summary = "数据采集api")
     public Result dataAcquisition() throws ExecutionException, InterruptedException {
-        Map<String, Integer> map = dataAcquisitionService.dataAcquisition();
+        Map<String, Object> map = dataAcquisitionService.dataAcquisition();
         return new Result(200, "数据采集成功", map);
     }
 

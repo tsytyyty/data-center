@@ -1,0 +1,59 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /analysis
+spring:
+  application:
+    name: analysis-server
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
+        group: data-center-group
+  datasource:
+    driver-class-name: dm.jdbc.driver.DmDriver
+    url: jdbc:dm://localhost:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    username: SYSDBA
+    password: SYSDBA
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+
+async:
+  executor:
+    thread:
+      # 配置核心线程数
+      core_pool_size: 10
+      # 配置最大线程数
+      max_pool_size: 20
+      # 配置队列大小
+      queue_capacity: 999
+      name:
+        prefix: clean-pool-
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.hexadecimal: debug
+    # feign日志以什么级别监控哪个接口
+    com.gzl.cn.service.PaymentFeignService: debug
+
+#MyBatis-plus
+mybatis-plus:
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      table-underline: true
+  mapper-locations: classpath*:com/data/center/mapper/xml/*Mapper.xml
+  type-aliases-package: com.data.center.domain.Do
+
+
+

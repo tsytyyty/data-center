@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.center.mapper.OpenSqlMapper">
+
+    <update id="dropDatabase">
+        drop database if exists USER_DATA;
+    </update>
+    
+    <update id="createDatabase">
+        create database if not exists USER_DATA;
+    </update>
+
+    <update id="dropTable" parameterType="string">
+        drop table if exists "${tableName}";
+    </update>
+
+    <update id="createTable" parameterType="list">
+        create table "${tableName}"(
+            <foreach collection="columns" index="columnName" item="columnType" separator=",">
+                "${columnName}" ${columnType}
+            </foreach>
+        )
+    </update>
+    
+    <insert id="insertData" parameterType="list">
+        insert into "${tableName}" values
+        <foreach collection="list" item="map" index="index" separator=",">
+            (
+            <foreach collection="map" index="key" item="value" separator=",">
+                #{value.columnValue}
+            </foreach>
+            )
+        </foreach>
+    </insert>
+
+
+
+</mapper>

@@ -186,7 +186,7 @@ public class MysqlDataSource implements DataSource, AcquisitionConstant {
                 connection = getConnection(DATA_SOURCE_CONNECT_TIMEOUT);
                 DataSourceCache.getInstance().putConnection(getId(), connection);
             }
-            Map<String, List<Object>> map = AcquisitionDatabaseUtil.acquisitionToMap(connection, dbName, dbTable);
+            Map<String, List<Object>> map = AcquisitionDatabaseUtil.acquisitionToMap(name, connection, dbName, dbTable);
             return map;
         };
     }

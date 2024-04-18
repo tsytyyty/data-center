@@ -4,7 +4,7 @@ server:
     context-path: /acquisition
 spring:
   application:
-    name: acquisition-service
+    name: acquisition-server
   cloud:
     nacos:
       server-addr: localhost:8848
@@ -16,10 +16,11 @@ spring:
     url: jdbc:dm://localhost:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
     username: SYSDBA
     password: SYSDBA
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://localhost:3306/a?useSSL=true&useUnicode=true&cerEncoding=utf8
-#    username: root
-#    password: 123456
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
 
 springdoc:
   swagger-ui:
@@ -28,6 +29,8 @@ springdoc:
 logging:
   level:
     com.hexadecimal: debug
+    # feign日志以什么级别监控哪个接口
+    com.gzl.cn.service.PaymentFeignService: debug
 
 #MyBatis-plus
 mybatis-plus:
@@ -38,7 +41,7 @@ mybatis-plus:
     db-config:
       table-underline: true
   mapper-locations: classpath*:com/data/center/mapper/xml/*Mapper.xml
-  type-aliases-package: com.data.center.domain.Do
+  type-aliases-package: com.data.center.pojo.Do
 
 
 

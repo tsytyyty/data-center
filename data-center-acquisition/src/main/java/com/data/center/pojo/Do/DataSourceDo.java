@@ -53,13 +53,15 @@ public class DataSourceDo implements Serializable {
     private String dbName;
 
     /**
-     * 数据表（文件名）- 类型
+     * key——value
+     * database：数据表（minio：文件名）- 类型
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private Map<String, String> dataAndType;
 
     /**
      * 数据源类型
+     * minio，mysql小写
      */
     private String type;
 

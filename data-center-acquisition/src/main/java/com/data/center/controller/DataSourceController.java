@@ -89,6 +89,22 @@ public class DataSourceController {
     }
 
     /**
+     * 测试全部已有数据源
+     */
+    @GetMapping("/test/all")
+    @Operation(summary = "测试全部数据源")
+    public Result testAllDataSource() throws Exception {
+        List<DataSourceDo> dataSourceDos = dataSourceService.getAllDataSource();
+        for (DataSourceDo dataSourceDo : dataSourceDos) {
+            int code = dataSourceService.testDataSource(dataSourceDo);
+            if (code != 200){
+                return new Result(code,"连接测试未通过！", dataSourceDo);
+            }
+        }
+        return new Result(200,"连接测试通过！", dataSourceDos);
+    }
+
+    /**
      * 修改数据源
      * 成功：200   未找到数据源：403   文件不存在：404   测试未通过：500     空值：999
      */
@@ -102,7 +118,7 @@ public class DataSourceController {
         map = dataSourceService.updateDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(code,"添加成功！", dataSourceDo);
+            return new Result(code,"修改成功！", dataSourceDo);
         } else if (code == 403) {
             return new Result(code,"未找到数据源id！", dataSourceDo);
         } else if (code == 404) {

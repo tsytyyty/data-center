@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>data-center-gateway</module>
-        <module>data-center-test</module>
+        <module>data-center-share</module>
         <module>data-center-common</module>
         <module>data-center-acquisition</module>
-        <module>data_center_common</module>
+        <module>data-center-analysis</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
 

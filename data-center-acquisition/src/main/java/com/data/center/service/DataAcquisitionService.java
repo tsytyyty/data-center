@@ -5,6 +5,6 @@ import java.util.concurrent.ExecutionException;
 
 public interface DataAcquisitionService {
 
-    Map<String, Integer> dataAcquisition() throws InterruptedException, ExecutionException;
+    Map<String, Object> dataAcquisition() throws InterruptedException, ExecutionException;
 
 }

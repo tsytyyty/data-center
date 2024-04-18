@@ -116,7 +116,7 @@ public class MinioDataSource implements DataSource {
     public Callable<Map<String, List<Object>>> dataAcquisition() {
         return () -> {
             AmazonS3 client = (AmazonS3) DataSourceCache.getInstance().getConnection(this);
-            return AcquisitionMinioUtil.acquisitionToList(client, bucketName, fileName);
+            return AcquisitionMinioUtil.acquisitionToList(name, client, bucketName, fileName);
         };
     }
 

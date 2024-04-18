@@ -15,18 +15,18 @@ spring:
 #          enabled: true #启动自动识别nacos服务
       routes: # 网关路由配置
         - id: test-service
-          uri: lb://test-service
+          uri: lb://test-server
           predicates:
-            - Path=/test-service/**
+            - Path=/test-server/**
           filters:
-            - RewritePath=/test-service(?<segment>/?.*), /test$\{segment}
+            - RewritePath=/test-server(?<segment>/?.*), /test$\{segment}
 
         - id: acquisition-service
-          uri: lb://acquisition-service
+          uri: lb://acquisition-server
           predicates:
-            - Path=/acquisition-service/**
+            - Path=/acquisition-server/**
           filters:
-            - RewritePath=/acquisition-service(?<segment>/?.*), /acquisition$\{segment}
+            - RewritePath=/acquisition-server(?<segment>/?.*), /acquisition$\{segment}
       globalcors:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
