@@ -75,6 +75,7 @@ public class CsvUtil {
         for (CSVRecord record : records) {
             UnloadingTable unloadingTable = new UnloadingTable();
             unloadingTable.setShipCompanies(record.get(0));
+            unloadingTable.setShipName(record.get(1));
             String workBeginTime = record.get(2);
             String workEndTime = record.get(3);
             String departureTime = record.get(4);

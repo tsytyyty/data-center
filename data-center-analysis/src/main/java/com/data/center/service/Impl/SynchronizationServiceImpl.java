@@ -35,6 +35,7 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
     @Autowired
     private ResultMapper resultMapper;
 
+
     @Async
     public void synchronizationAfterClean(){
         long begin = System.currentTimeMillis();
@@ -42,6 +43,7 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
         RReadWriteLock lock = redissonClient.getReadWriteLock(LOCK_READ_AND_WRITE);
         lock.writeLock().lock();
         try {
+
             List<Future<Void>> list = new ArrayList<>();
             list.add(customerInformation());
             list.add(logisticsInformation());
@@ -60,7 +62,7 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
             clean_logistics_information.clear();
         }finally {
             lock.writeLock().unlock();
-            log.debug("同步数据完成，耗时：" + (System.currentTimeMillis() - begin) + "ms");
+            System.out.println("===========================同步数据完成，耗时：" + (System.currentTimeMillis() - begin) + "ms");
         }
     }
 

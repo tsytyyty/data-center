@@ -5,9 +5,9 @@
 
 
     <insert id="batchInsert" parameterType="list">
-        insert into "unloading_table"
-        ("ship_companies","ship_name","work_begin_time","work_end_time","departure_time","arrive_time","port",
-        "logistics_id","container_id","container_size","departure_place","destination_place","remark")
+        insert into unloading_table
+        (ship_companies, ship_name, work_begin_time, work_end_time, departure_time, arrive_time,
+        port, logistics_id, container_id, container_size, departure_place, destination_place, remark)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.shipCompanies},#{item.shipName},#{item.workBeginTime},#{item.workEndTime},#{item.departureTime},

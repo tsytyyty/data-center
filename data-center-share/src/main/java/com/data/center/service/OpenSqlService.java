@@ -1,14 +1,17 @@
 package com.data.center.service;
 
+//import javax.servlet.http.HttpServletResponse;
+
+
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
 public interface OpenSqlService {
-
-
-    Connection createConnection();
 
     /**
      * 查询操作
@@ -21,5 +24,10 @@ public interface OpenSqlService {
      * 失败：500
      */
     int saveData(String username);
+
+    /**
+     * 导出到xlsx
+     */
+    void exportData(HttpServletResponse response, String username);
 
 }

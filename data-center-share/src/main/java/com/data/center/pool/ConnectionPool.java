@@ -1,6 +1,7 @@
 package com.data.center.pool;
 
 import com.data.center.service.Impl.OpenSqlServiceImpl;
+import com.data.center.utils.DbUtil;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,9 +16,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 @Data
 public class ConnectionPool implements IConnectionPool {
-
-    @Autowired
-    private OpenSqlServiceImpl openDataService = new OpenSqlServiceImpl();
 
     /**
      * 空闲连接池
@@ -64,7 +62,7 @@ public class ConnectionPool implements IConnectionPool {
 
     private void init() {
         for (int i = 0; i < initSize; i++) {
-            Connection connection = openDataService.createConnection();
+            Connection connection = DbUtil.createConnection();
             freeConnectPool.offer(connection);
         }
     }
@@ -92,7 +90,7 @@ public class ConnectionPool implements IConnectionPool {
         // 通过 activeSize.incrementAndGet() <= maxSize 这个判断
         // 解决 if(activeSize.get() < maxSize) 存在的线程安全问题
         if (activeSize.incrementAndGet() <= maxSize) {
-            connection = openDataService.createConnection();// 创建新连接
+            connection = DbUtil.createConnection();// 创建新连接
             busyConnectPool.offer(connection);
             return connection;
         }
@@ -118,7 +116,7 @@ public class ConnectionPool implements IConnectionPool {
      */
     public void createConnectionAsync() {
         new Thread(() -> {
-            Connection connection = openDataService.createConnection();
+            Connection connection = DbUtil.createConnection();
             freeConnectPool.offer(connection);
             activeSize.incrementAndGet();
         }).start();
@@ -151,7 +149,7 @@ public class ConnectionPool implements IConnectionPool {
                 }
                 // 如果连接失效，并且连接数小于等于3，则重新创建一个连接
                 if (!valid && activeSize.get() <= 3) {
-                    connection = openDataService.createConnection();
+                    connection = DbUtil.createConnection();
                 }
                 freeConnectPool.offer(connection);// 放进一个可用的连接
             } catch (SQLException e) {

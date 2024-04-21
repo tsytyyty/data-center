@@ -53,7 +53,7 @@ public interface ResultMapper {
     /**
      * 删除表
      */
-    @Delete("delete from \"${tableName}\";")
+    @Delete("delete from ${tableName};")
     int deleteTable(@Param("tableName")String tableName);
 
 

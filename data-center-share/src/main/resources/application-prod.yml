@@ -1,0 +1,43 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /share
+spring:
+  application:
+    name: share-server
+  cloud:
+    nacos:
+      server-addr: 10.7.32.53:8848
+      discovery:
+        group: data-center-group
+        namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
+  datasource:
+    primary:
+      driver-class: dm.jdbc.driver.DmDriver
+      jdbc-url: jdbc:dm://10.4.59.42:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      username: SYSDBA
+      password: SYSDBA
+    secondary:
+      driver-class: dm.jdbc.driver.DmDriver
+      jdbc-url: jdbc:dm://10.4.59.42:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      username: SYSDBA
+      password: SYSDBA
+  data:
+    redis:
+      host: 10.7.32.53
+      port: 6379
+      database: 0
+
+
+connection:
+  pool:
+    driver: dm.jdbc.driver.DmDriver
+    url: jdbc:dm://10.4.59.42:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    username: SYSDBA
+    password: SYSDBA
+    initSize: 3
+    maxSize: 10
+    timeout: 10000
+
+
+

@@ -6,7 +6,7 @@
 
     <insert id="batchInsert" parameterType="list">
         insert into customer_information
-        ("name","id_card","phone_number","address","remark")
+        (name,id_card,phone_number,address,remark)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.name},#{item.idCard},#{item.phoneNumber},#{item.address},#{item.remark})

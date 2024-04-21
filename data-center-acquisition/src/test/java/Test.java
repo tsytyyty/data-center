@@ -1,18 +1,18 @@
-import com.data.center.AcquisitionApplication;
-import com.data.center.pojo.Do.LoadingTable;
-import com.data.center.pojo.Do.LogisticsInformation;
-import com.data.center.pojo.Do.TabulateData;
-import com.data.center.pojo.Do.UnloadingTable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.util.*;
-import java.util.concurrent.*;
-
-@SpringBootTest(classes = AcquisitionApplication.class)
-public class Test {
+//import com.data.center.AcquisitionApplication;
+//import com.data.center.pojo.Do.LoadingTable;
+//import com.data.center.pojo.Do.LogisticsInformation;
+//import com.data.center.pojo.Do.TabulateData;
+//import com.data.center.pojo.Do.UnloadingTable;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import java.io.IOException;
+//import java.sql.SQLException;
+//import java.text.ParseException;
+//import java.util.*;
+//import java.util.concurrent.*;
+//
+//@SpringBootTest(classes = AcquisitionApplication.class)
+//public class Test {
 
 //    @Autowired
 //    private CustomerInformationServiceImpl customerInformationService;
@@ -24,17 +24,17 @@ public class Test {
 //    private LogisticsInformationServiceImpl logisticsInformationService;
 
 
-    @org.junit.jupiter.api.Test
-    public void test() throws ClassNotFoundException, IllegalAccessException, InstantiationException, ExecutionException, InterruptedException, SQLException, IOException, ParseException {
-        System.out.println(String.valueOf(UUID.randomUUID()));
-
-    }
+//    @org.junit.jupiter.api.Test
+//    public void test() throws ClassNotFoundException, IllegalAccessException, InstantiationException, ExecutionException, InterruptedException, SQLException, IOException, ParseException {
+//        System.out.println(String.valueOf(UUID.randomUUID()));
+//
+//    }
 
 
     /**
      * 数据统计脚本
      */
-    Map<String, Integer> portGoodsYearMonth_throughput = new HashMap<>();
+//    Map<String, Integer> portGoodsYearMonth_throughput = new HashMap<>();
 
 //    @org.junit.jupiter.api.Test
 //    public void test1(){
@@ -95,36 +95,36 @@ public class Test {
 //        });
 ////        result.forEach(System.out::println);
 //
-////        try {
-////            BufferedWriter writer = new BufferedWriter(
-////                    new OutputStreamWriter(Files.newOutputStream(Paths.get("D:/tabulateData.csv")), StandardCharsets.UTF_8));
-////            CSVFormat csvFormat = CSVFormat.EXCEL.withHeader("人员ID","人员姓名","年龄");
-////            CSVPrinter printer = csvFormat.print(writer);
-////            for (int i = 0; i < result.size(); i++) {
-////                TabulateData tabulateData = result.get(i);
-////                printer.printRecord(tabulateData.getPort(), tabulateData.getGood(), tabulateData.getYear(), tabulateData.getMonth(), tabulateData.getThroughPut());            }
-////            printer.flush();
-////            printer.close();
-////        } catch (Exception e) {
-////            e.printStackTrace();
-////        }
+//        try {
+//            BufferedWriter writer = new BufferedWriter(
+//                    new OutputStreamWriter(Files.newOutputStream(Paths.get("D:/tabulateData.csv")), StandardCharsets.UTF_8));
+//            CSVFormat csvFormat = CSVFormat.EXCEL.withHeader("人员ID","人员姓名","年龄");
+//            CSVPrinter printer = csvFormat.print(writer);
+//            for (int i = 0; i < result.size(); i++) {
+//                TabulateData tabulateData = result.get(i);
+//                printer.printRecord(tabulateData.getPort(), tabulateData.getGood(), tabulateData.getYear(), tabulateData.getMonth(), tabulateData.getThroughPut());            }
+//            printer.flush();
+//            printer.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 //    }
 
-    private void portGoodsYearMonthThroughput(String port, String goods, int year, int month, int weight){
-        String key = keyPortGoodsYearMonth(port, goods, year, month);
-        if (portGoodsYearMonth_throughput.containsKey(keyPortGoodsYearMonth(port, goods, year, month))){
-            portGoodsYearMonth_throughput.replace(key, portGoodsYearMonth_throughput.get(key) + weight);
-        }else {
-            portGoodsYearMonth_throughput.put(key, weight);
-        }
-    }
-    private String keyPortGoodsYearMonth(String port, String goods, int year, int month){
-        return port + "_" + goods + "_" + year + "_" + monthIntToString(month);
-    }
-    private String monthIntToString(int month){
-        if (month > 9) return String.valueOf(month);
-        else return "0" + month;
-    }
+//    private void portGoodsYearMonthThroughput(String port, String goods, int year, int month, int weight){
+//        String key = keyPortGoodsYearMonth(port, goods, year, month);
+//        if (portGoodsYearMonth_throughput.containsKey(keyPortGoodsYearMonth(port, goods, year, month))){
+//            portGoodsYearMonth_throughput.replace(key, portGoodsYearMonth_throughput.get(key) + weight);
+//        }else {
+//            portGoodsYearMonth_throughput.put(key, weight);
+//        }
+//    }
+//    private String keyPortGoodsYearMonth(String port, String goods, int year, int month){
+//        return port + "_" + goods + "_" + year + "_" + monthIntToString(month);
+//    }
+//    private String monthIntToString(int month){
+//        if (month > 9) return String.valueOf(month);
+//        else return "0" + month;
+//    }
 
 
-}
+//}

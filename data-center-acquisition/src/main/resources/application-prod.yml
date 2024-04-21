@@ -1,23 +1,24 @@
 server:
-  port: 8095
+  port: 8081
   servlet:
-    context-path: /share
+    context-path: /acquisition
 spring:
   application:
-    name: share-server
+    name: acquisition-server
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: 10.7.32.53:8848
       discovery:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
+        group: data-center-group
   datasource:
     driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://localhost:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:dm://10.4.59.42:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
     username: SYSDBA
     password: SYSDBA
   data:
     redis:
-      host: 127.0.0.1
+      host: 10.7.32.53
       port: 6379
       database: 0
 
@@ -41,7 +42,6 @@ mybatis-plus:
       table-underline: true
   mapper-locations: classpath*:com/data/center/mapper/xml/*Mapper.xml
   type-aliases-package: com.data.center.pojo.Do
-
 
 
 

@@ -23,7 +23,7 @@ public interface LogisticsInformationMapper extends BaseMapper<LogisticsInformat
             "(\n" +
             "    id           BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '主键',\n" +
             "    logistics_id VARCHAR(255) COMMENT '提单号',\n" +
-            "    \"owner\"        VARCHAR(255) COMMENT '所有者',\n" +
+            "    owner       VARCHAR(255) COMMENT '所有者',\n" +
             "    owner_id     VARCHAR(255) COMMENT '所有者ID',\n" +
             "    company_id   VARCHAR(255) COMMENT '公司ID',\n" +
             "    container_id VARCHAR(255) COMMENT '集装箱ID',\n" +

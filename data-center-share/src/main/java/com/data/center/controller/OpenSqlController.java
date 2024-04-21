@@ -5,6 +5,7 @@ import com.data.center.pojo.result.Result;
 import com.data.center.service.OpenSqlService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,6 +53,18 @@ public class OpenSqlController {
         int code = openSqlService.saveData(username);
         return new Result(code, code == 200 ? "保存成功！" : "保存失败，数据为空", null);
     }
+
+
+    /**
+     * 导出到excel
+     */
+    @GetMapping("/exportExcel")
+    public void exportExcel(@RequestParam String username, HttpServletResponse response){
+        openSqlService.exportData(response, username);
+    }
+
+
+
 
 
 }

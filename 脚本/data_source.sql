@@ -1,0 +1,3 @@
+insert into MY_TABLE (id, name, url, username, password, bucket_name, db_name, data_and_type, type)
+values  ('402deee5fc3a4edb8dc3e63d4cdce9c3', '123', 'jdbc:mysql://localhost:3306?useSSL=true&useUnicode=true&cerEncoding=utf8', 'root', '123456', null, 'a', '{}', 'mysql'),
+        ('c91af1ff5d0a44a28eed3598fddab714', 'minioTest', 'http://127.0.0.1:9090', 'admin', 'admin1234', 'test', null, '{"物流信息2021.txt":"LogisticsInformation","卸货表2021.txt":"UnloadingTable","客户信息2021.xlsx":"CustomerInformation","装货表2021.txt":"LoadingTable"}', 'minio');

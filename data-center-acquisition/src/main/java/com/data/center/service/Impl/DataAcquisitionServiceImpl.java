@@ -3,10 +3,12 @@ package com.data.center.service.Impl;
 import com.data.center.contant.RedisConstant;
 import com.data.center.factory.DataSource;
 import com.data.center.factory.DataSourceFactory;
+import com.data.center.feignClient.DataAnalysisFeignClient;
 import com.data.center.pojo.Do.*;
 import com.data.center.service.DataAcquisitionService;
 import com.data.center.service.DataSourceService;
 import com.data.center.utils.AsyncSender;
+import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 @Service
+@Slf4j
 public class DataAcquisitionServiceImpl implements DataAcquisitionService, RedisConstant {
 
     @Autowired
@@ -24,6 +27,8 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
     private AsyncSender asyncSender;
     @Autowired
     private RedissonClient redissonClient;
+    @Autowired
+    private DataAnalysisFeignClient feignClient;
 
     public Map<String, Object> dataAcquisition() throws InterruptedException, ExecutionException {
 
@@ -80,52 +85,65 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
         //异步分批发送数据
         new Thread(() -> {
             //分布式锁
-            redissonClient.getLock(LOCK_TRANSMIT_CLEAN).lock();
-           try {
-               int i;
-               List<Future<Boolean>> futureList = new ArrayList<>();
-               for (i = 0; i <= customerInformationList.size(); i += 5000){
-                   if (i + 5000 >= customerInformationList.size()){
-                       futureList.add(asyncSender.sendCus(customerInformationList.subList(i, customerInformationList.size())));
-                       break;
-                   }
-                   futureList.add(asyncSender.sendCus(customerInformationList.subList(i, i + 5000)));
-               }
-               for (i = 0; i <= logisticsInformationList.size(); i += 5000){
-                   if (i + 5000 >= logisticsInformationList.size()){
-                       futureList.add(asyncSender.sendLog(logisticsInformationList.subList(i, logisticsInformationList.size())));
-                       break;
-                   }
-                   futureList.add(asyncSender.sendLog(logisticsInformationList.subList(i, i + 5000)));
-               }
-               for (i = 0; i <= loadingTableList.size(); i += 5000){
-                   if (i + 5000 >= loadingTableList.size()){
-                       futureList.add(asyncSender.sendLoad(loadingTableList.subList(i, loadingTableList.size())));
-                       break;
-                   }
-                   futureList.add(asyncSender.sendLoad(loadingTableList.subList(i, i + 5000)));
-               }
-               for (i = 0; i <= unloadingTableList.size(); i += 5000){
-                   if (i + 5000 >= unloadingTableList.size()){
-                       futureList.add(asyncSender.sendUnload(unloadingTableList.subList(i, unloadingTableList.size())));
-                       break;
-                   }
-                   futureList.add(asyncSender.sendUnload(unloadingTableList.subList(i, i + 5000)));
-               }
+            boolean getLock = false;
+            try {
+                getLock = redissonClient.getLock(LOCK_TRANSMIT_CLEAN).tryLock(10, 10, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if (getLock){
+                long begin = System.currentTimeMillis();
+                feignClient.clearData();
+                try {
+                    int i;
+                    List<Future<Boolean>> futureList = new ArrayList<>();
+                    for (i = 0; i <= customerInformationList.size(); i += 5000){
+                        if (i + 5000 >= customerInformationList.size()){
+                            futureList.add(asyncSender.sendCus(customerInformationList.subList(i, customerInformationList.size())));
+                            break;
+                        }
+                        futureList.add(asyncSender.sendCus(customerInformationList.subList(i, i + 5000)));
+                    }
+                    for (i = 0; i <= logisticsInformationList.size(); i += 5000){
+                        if (i + 5000 >= logisticsInformationList.size()){
+                            futureList.add(asyncSender.sendLog(logisticsInformationList.subList(i, logisticsInformationList.size())));
+                            break;
+                        }
+                        futureList.add(asyncSender.sendLog(logisticsInformationList.subList(i, i + 5000)));
+                    }
+                    for (i = 0; i <= loadingTableList.size(); i += 5000){
+                        if (i + 5000 >= loadingTableList.size()){
+                            futureList.add(asyncSender.sendLoad(loadingTableList.subList(i, loadingTableList.size())));
+                            break;
+                        }
+                        futureList.add(asyncSender.sendLoad(loadingTableList.subList(i, i + 5000)));
+                    }
+                    for (i = 0; i <= unloadingTableList.size(); i += 5000){
+                        if (i + 5000 >= unloadingTableList.size()){
+                            futureList.add(asyncSender.sendUnload(unloadingTableList.subList(i, unloadingTableList.size())));
+                            break;
+                        }
+                        futureList.add(asyncSender.sendUnload(unloadingTableList.subList(i, i + 5000)));
+                    }
 
-               //等待所有线程执行完毕
-               futureList.forEach(future -> {
-                   try {
-                       future.get();
-                   } catch (InterruptedException | ExecutionException e) {
-                       throw new RuntimeException(e);
-                   }
-               });
+                    //等待所有线程执行完毕
+                    futureList.forEach(future -> {
+                        try {
+                            future.get();
+                        } catch (InterruptedException | ExecutionException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
 
-           }finally {
-               //解锁
-               redissonClient.getLock(LOCK_TRANSMIT_CLEAN).unlock();
-           }
+                }finally {
+                    System.out.println("=======================================================================" + (System.currentTimeMillis() - begin));
+                    //解锁
+                    redissonClient.getLock(LOCK_TRANSMIT_CLEAN).unlock();
+                }
+            }else {
+                System.out.println("==========================================================================获取锁失败");
+            }
+
         }).start();
 
         result.put("customerInformation", customerInformationList.size());      //客户信息数据量（int）

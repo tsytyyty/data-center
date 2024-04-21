@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.center.mapper.VisualMapper">
+
+    <select id="selectPortGoodsThroughput" parameterType="string" resultType="com.data.center.pojo.vo.PortGoodsThroughputVo">
+        SELECT port, goods, throughput, percentage
+        FROM port_goods_throughput
+        <if test="port!=null">
+            WHERE port = #{port}
+        </if>
+        ORDER BY port, throughput DESC;
+    </select>
+
+    <select id="selectPortYoyQoq" parameterType="int" resultType="com.data.center.pojo.vo.PortYoyQoqVo">
+        SELECT port, month, throughput, yoy, qoq
+        FROM port_yoy_qoq
+        WHERE year = #{year}
+        ORDER BY port, year, month;
+    </select>
+
+    <select id="selectPortThroughput" resultType="com.data.center.pojo.vo.PortThroughputVo">
+        SELECT port, throughput, percentage
+        FROM port_throughput
+        ORDER BY throughput DESC;
+    </select>
+
+    <select id="selectPortGoodsFlowTime" parameterType="string" resultType="com.data.center.pojo.vo.PortGoodsFlowTimeVo">
+        SELECT goods, flow_time
+        FROM port_goods_flow_time
+        WHERE port = #{port}
+        ORDER BY flow_time DESC;
+    </select>
+
+</mapper>

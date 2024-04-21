@@ -3,19 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.data.center.mapper.ResultMapper">
 
-
-    <insert id="batchInsert" parameterType="list">
-        insert into "customer_information"
-        ("name","id_card","phone_number","address","remark")
-        values
-        <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.name},#{item.id},#{item.phoneNumber},#{item.address},#{item.remark})
-        </foreach>
-    </insert>
-
     <insert id="tabulateData" parameterType="list">
-        insert into "tabulate_data"
-        ("port","goods","year","month","throughput")
+        insert into tabulate_data
+        (port, goods, year, month, throughput)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.goods},#{item.year},#{item.month},#{item.throughput})
@@ -23,8 +13,8 @@
     </insert>
 
     <insert id="portThroughput" parameterType="list">
-        insert into "port_throughput"
-        ("port","throughput","percentage")
+        insert into port_throughput
+        (port, throughput, percentage)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.throughput},#{item.percentage})
@@ -32,8 +22,8 @@
     </insert>
 
     <insert id="goodsThroughput" parameterType="list">
-        insert into "goods_throughput"
-        ("goods","throughput","percentage")
+        insert into goods_throughput
+        (goods, throughput, percentage)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.goods},#{item.throughput},#{item.percentage})
@@ -41,8 +31,8 @@
     </insert>
 
     <insert id="portGoodsThroughput" parameterType="list">
-        insert into "port_goods_throughput"
-        ("port","goods","throughput","percentage")
+        insert into port_goods_throughput
+        (port, goods, throughput, percentage)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.goods},#{item.throughput},#{item.percentage})
@@ -50,8 +40,8 @@
     </insert>
 
     <insert id="portGoodsInput" parameterType="list">
-        insert into "port_goods_input"
-        ("port","goods","input","percentage")
+        insert into port_goods_input
+        (port, goods, input, percentage)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.goods},#{item.input},#{item.percentage})
@@ -59,8 +49,8 @@
     </insert>
 
     <insert id="portGoodsOutput" parameterType="list">
-        insert into "port_goods_output"
-        ("port","goods","output","percentage")
+        insert into port_goods_output
+        (port, goods, output, percentage)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.goods},#{item.output},#{item.percentage})
@@ -68,8 +58,8 @@
     </insert>
 
     <insert id="yoyQoqEveryYear" parameterType="list">
-        insert into "port_yoy_qoq"
-        ("port","year","month","throughput","yoy","qoq")
+        insert into port_yoy_qoq
+        (port, year, month, throughput, yoy, qoq)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.year},#{item.month},#{item.throughput},#{item.yoy},#{item.qoq})
@@ -77,8 +67,8 @@
     </insert>
 
     <insert id="portGoodsFlowTime" parameterType="list">
-        insert into "port_goods_flow_time"
-        ("port","goods","flow_time")
+        insert into port_goods_flow_time
+        (port, goods, flow_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.goods},#{item.flowTime})

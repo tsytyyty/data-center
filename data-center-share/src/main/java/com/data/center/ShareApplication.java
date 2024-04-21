@@ -1,16 +1,17 @@
 package com.data.center;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.scheduling.annotation.EnableAsync;
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@MapperScan("com.data.center.mapper")
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableAsync
-public class TestApplication {
+public class ShareApplication {
     public static void main(String[] args) {
-        SpringApplication.run(TestApplication.class,args);
+        SpringApplication.run(ShareApplication.class,args);
     }
 }

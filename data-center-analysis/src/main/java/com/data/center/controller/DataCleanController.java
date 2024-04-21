@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -27,19 +28,28 @@ public class DataCleanController implements AfterCleanData, OriginalData, RedisC
 
     @GetMapping("/data/clean")
     @Operation(summary = "数据清洗api")
-    public Result dataClean(){
+    public Result dataClean() {
+        boolean getLock = false;
         //加锁
-        redissonClient.getLock(LOCK_TRANSMIT_CLEAN).lock();
         try {
-            dataCleanService.dataClean();
-        } catch (ExecutionException | InterruptedException e) {
-            log.error(e.getMessage() + e);
-            return new Result(500, "数据清洗失败", null);
-        } finally {
-            //解锁
-            redissonClient.getLock("data_transmit_and_clean").unlock();
+            getLock = redissonClient.getLock(LOCK_TRANSMIT_CLEAN).tryLock(10 , 10, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
-        return new Result(200, "数据清洗成功", null);
+        if (getLock){
+            try {
+                dataCleanService.dataClean();
+            } catch (ExecutionException | InterruptedException e) {
+                log.error(e.getMessage() + e);
+                return new Result(500, "数据清洗失败", null);
+            } finally {
+                //解锁
+                redissonClient.getLock("data_transmit_and_clean").unlock();
+            }
+            return new Result(200, "数据清洗成功", null);
+        }else {
+            return Result.error("数据清洗失败，获取锁失败！");
+        }
     }
 
 }

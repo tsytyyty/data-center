@@ -5,8 +5,8 @@
 
 
     <insert id="batchInsert" parameterType="list">
-        insert into "logistics_information"
-        ("logistics_id","owner","owner_id","company_id","container_id","goods_name","weight","remark")
+        insert into logistics_information
+        (logistics_id, owner, owner_id, company_id, container_id, goods_name, weight, remark)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.logisticsId},#{item.owner},#{item.ownerId},#{item.companyId},#{item.containerId},#{item.goodsName},

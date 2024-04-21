@@ -5,44 +5,40 @@ import com.data.center.mapper.OpenSqlMapper;
 import com.data.center.pojo.Column;
 import com.data.center.pool.ConnectionPool;
 import com.data.center.service.OpenSqlService;
-import lombok.Data;
+import jakarta.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpServletResponse;
+
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
 import org.redisson.api.RReadWriteLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Service
 @Slf4j
-@Data
 public class OpenSqlServiceImpl implements OpenSqlService, RedisConstant {
 
-    @Value("${connection.pool.driver}")
-    private String driver;
-    @Value("${connection.pool.url}")
-    private String url;
-    @Value("${connection.pool.username}")
-    private String username;
-    @Value("${connection.pool.password}")
-    private String password;
-
 //    @Value("${connection.pool.driver}")
-//    private String driver = "dm.jdbc.driver.DmDriver";
+//    private String driver;
 //    @Value("${connection.pool.url}")
-//    private String url = "jdbc:dm://localhost:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
+//    private String url;
 //    @Value("${connection.pool.username}")
-//    private String username = "SYSDBA";
+//    private String username;
 //    @Value("${connection.pool.password}")
-//    private String password = "SYSDBA";
+//    private String password;
+
+
 
     @Autowired
     private RedissonClient redissonClient;
@@ -54,21 +50,7 @@ public class OpenSqlServiceImpl implements OpenSqlService, RedisConstant {
 
     private static Map<String, List<Map<String, Column>>> selectResults = new ConcurrentHashMap<>();
 
-    /**
-     * 创建数据库连接
-     *
-     * @return
-     */
-    public Connection createConnection() {
-        Connection connection = null;
-        try {
-            Class.forName(driver);
-            connection = DriverManager.getConnection(url, username, password);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
-    }
+
 
 
     public List<Map<String, Object>> selectData(String username, String sql) throws SQLException {
@@ -143,6 +125,57 @@ public class OpenSqlServiceImpl implements OpenSqlService, RedisConstant {
         insertData(username);
         return 200;
     }
+
+    @Override
+    public void exportData(HttpServletResponse response, String username) {
+        List<Map<String, Column>> list = selectResults.get(username);
+//        List<Map<String, Column>> list = new ArrayList<>();
+//        for (int i = 0; i < 10; i++){
+//            Map<String, Column> map = new HashMap<>();
+//            map.put("username", new Column("username", "VARCHAR(255)", "yty"));
+//            map.put("password", new Column("password", "VARCHAR(255)", "123456"));
+//            list.add(map);
+//        }
+
+        //声明一个工作薄
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        //生成一个表格
+        HSSFSheet sheet = workbook.createSheet();
+        //设置表格默认列宽度为15个字节
+        sheet.setDefaultColumnWidth((short) 18);
+        AtomicInteger i = new AtomicInteger(0);
+        Row finalRow = sheet.createRow(0);
+        list.get(0).forEach((columnName, column) -> {
+            Cell cell = finalRow.createCell(i.get());
+            cell.setCellType(CellType.STRING);
+            cell.setCellValue(columnName);
+            i.incrementAndGet();
+        });
+        for (int j = 0; j < list.size(); j++) {
+            Row row = sheet.createRow(j + 1);
+            Map<String, Column> map = list.get(j);
+            i.set(0);
+            map.forEach((columnName, column) -> {
+                Cell cell = row.createCell(i.get());
+                cell.setCellType(CellType.STRING);
+                cell.setCellValue((String) column.getColumnValue());
+                i.incrementAndGet();
+            });
+        }
+
+        response.setContentType("application/octet-stream");
+        //默认Excel名称
+        response.setHeader("Content-Disposition", "attachment;fileName="+ username + "_" + UUID.randomUUID().toString() +".xlsx");
+
+        try {
+            response.flushBuffer();
+            workbook.write(response.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public void insertData(String username){
         openSqlMapper.insertData(username, selectResults.get(username));

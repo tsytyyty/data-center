@@ -5,10 +5,7 @@ import com.data.center.pojo.Do.CustomerInformation;
 import com.data.center.pojo.Do.LoadingTable;
 import com.data.center.pojo.Do.LogisticsInformation;
 import com.data.center.pojo.Do.UnloadingTable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,6 +34,15 @@ public class DataReceiveController implements OriginalData {
     @PostMapping("/UnloadingTable")
     public Boolean receiveDataUnloadingTable(@RequestBody List<UnloadingTable> list) {
         data_unloading_table.add(list);
+        return true;
+    }
+
+    @GetMapping("/clear")
+    public Boolean dataClear() {
+        data_customer_information.clear();
+        data_logistics_information.clear();
+        data_loading_table.clear();
+        data_unloading_table.clear();
         return true;
     }
 

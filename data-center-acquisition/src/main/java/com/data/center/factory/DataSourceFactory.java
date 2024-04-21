@@ -1,21 +1,9 @@
 package com.data.center.factory;
 
 import com.data.center.pojo.Do.DataSourceDo;
-import com.data.center.pojo.dto.DataSourceDto;
 
 public class DataSourceFactory {
 
-//    public static DataSource getDataSource(String type, DataSourceDto dto) {
-//        switch (type) {
-//            case "mysql":
-//                return new MysqlDataSource(dto.getId(), dto.getName(), dto.getUrl(), dto.getUsername(), dto.getPassword(), dto.getDbName(), dto.getTableName());
-//            case "minio":
-//                return new MinioDataSource(dto.getId(), dto.getName(), dto.getUrl(), dto.getUsername(), dto.getPassword(), dto.getDbName(), dto.getTableName());
-//
-//            default:
-//                return null;
-//        }
-//    }
 
     public static DataSource build(DataSourceDo d) {
         switch (d.getType()) {

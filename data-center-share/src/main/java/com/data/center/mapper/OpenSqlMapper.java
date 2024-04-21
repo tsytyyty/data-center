@@ -3,22 +3,14 @@ package com.data.center.mapper;
 import com.data.center.pojo.Column;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 import java.util.Map;
 
 @Mapper
+@Qualifier("PrimarySqlSessionTemplate")
 public interface OpenSqlMapper {
-
-    /**
-     * 删除数据库
-     */
-    int dropDatabase();
-
-    /**
-     * 建立数据库
-     */
-    int createDatabase();
 
     /**
      * 删除表

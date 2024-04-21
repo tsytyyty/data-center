@@ -76,7 +76,6 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
                         }else {
                             c.setRemark(remark.stream().collect(Collectors.joining(",")));
                             c.setId(atomicLong.incrementAndGet());
-                            dirty_customer_information.add(c);
                             map.put(c.getId(), c);
                         }
                     });
@@ -120,7 +119,6 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
                         }else {
                             l.setRemark(remark.stream().collect(Collectors.joining(",")));
                             l.setId(atomicLong.incrementAndGet());
-                            dirty_logistics_information.add(l);
                             map.put(l.getId(), l);
                         }
                     });
@@ -156,7 +154,6 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
                         }else {
                             l.setRemark(remark.stream().collect(Collectors.joining(",")));
                             l.setId(atomicLong.incrementAndGet());
-                            dirty_loading_table.add(l);
                             map.put(l.getId(), l);
                         }
                     });
@@ -192,7 +189,6 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
                         }else {
                             l.setRemark(remark.stream().collect(Collectors.joining(",")));
                             l.setId(atomicLong.incrementAndGet());
-                            dirty_unloading_table.add(l);
                             map.put(l.getId(), l);
                         }
                     });
