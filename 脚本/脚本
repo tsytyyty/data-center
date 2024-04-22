@@ -1,8 +1,12 @@
 # nacos启动
 D:\nacos-2.2.3\bin\startup.cmd -m standalone
+D:\nacos-1.4.2\bin\startup.cmd -m standalone
 
 # nacos控制管理页面
 http://localhost:8848/nacos
 
 # 付费气象数据
 http://www.weatherdt.com/datadetail.html?code=14f6f3a0-dc71-42fc-a182-841bfa75dc44
+
+# TongWeb
+D:\TongWeb7.0.4.9_Enterprise_Windows\bin\startserver.bat

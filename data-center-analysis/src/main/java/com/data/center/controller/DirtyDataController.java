@@ -9,8 +9,7 @@ import com.data.center.pojo.Do.LogisticsInformation;
 import com.data.center.pojo.Do.UnloadingTable;
 import com.data.center.pojo.result.Result;
 import com.data.center.utils.IdCardUtil;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+
 import org.redisson.api.RMap;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/error/data")
-@Tag(name = "异常数据")
 public class DirtyDataController implements RedisConstant, AfterCleanData {
 
     @Autowired
@@ -34,7 +32,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
      * 错误数据
      */
     @GetMapping("/errorTotal")
-    @Operation(summary = "错误数据数量")
     public Result errorData(@RequestParam String type){
         int total;
         switch (type){
@@ -57,7 +54,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @GetMapping("/list/customerError")
-    @Operation(summary = "客户信息错误数据")
     public Result customerError(@RequestParam int page, @RequestParam int number) {
 
         RMap<Object, Object> redisMap = redissonClient.getMap(DIRTY_CUSTOMER_INFORMATION);
@@ -74,7 +70,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @GetMapping("/list/logisticsError")
-    @Operation(summary = "物流信息错误数据")
     public Result logisticsError(@RequestParam int page, @RequestParam int number) {
 
         RMap<Object, Object> redisMap = redissonClient.getMap(DIRTY_LOGISTICS_INFORMATION);
@@ -91,7 +86,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @GetMapping("/list/loadingError")
-    @Operation(summary = "装货表错误数据")
     public Result loadingError(@RequestParam int page, @RequestParam int number) {
 
         RMap<Object, Object> redisMap = redissonClient.getMap(DIRTY_LOADING_TABLE);
@@ -108,7 +102,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @GetMapping("/list/unloadingError")
-    @Operation(summary = "卸货表错误数据")
     public Result unloadingError(@RequestParam int page, @RequestParam int number) {
 
         RMap<Object, Object> redisMap = redissonClient.getMap(DIRTY_UNLOADING_TABLE);
@@ -125,7 +118,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @PostMapping("/edit/customerError")
-    @Operation(summary = "客户信息错误数据修改")
     public Result editCustomerError(@RequestBody CustomerInformation customerInformation){
         RMap<Object, Object> map = redissonClient.getMap(DIRTY_CUSTOMER_INFORMATION);
         CustomerInformation c = (CustomerInformation) map.get(customerInformation.getId());
@@ -155,7 +147,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @PostMapping("/edit/logisticsError")
-    @Operation(summary = "物流信息错误数据修改推荐")
     public Result editLogisticsError(@RequestBody LogisticsInformation logisticsInformation){
         RMap<Object, Object> map = redissonClient.getMap(DIRTY_LOGISTICS_INFORMATION);
         LogisticsInformation l = (LogisticsInformation) map.get(logisticsInformation.getId());
@@ -188,7 +179,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @PostMapping("/edit/loadingError")
-    @Operation(summary = "装货表错误数据修改")
     public Result editLoadingError(@RequestBody LoadingTable loadingTable){
         RMap<Object, Object> map = redissonClient.getMap(DIRTY_LOADING_TABLE);
         LoadingTable l = (LoadingTable) map.get(loadingTable.getId());
@@ -215,7 +205,6 @@ public class DirtyDataController implements RedisConstant, AfterCleanData {
     }
 
     @PostMapping("/edit/customerInformation")
-    @Operation(summary = "客户信息错误数据修改")
     public Result editCustomerInformation(@RequestBody UnloadingTable unloadingTable){
         RMap<Object, Object> map = redissonClient.getMap(DIRTY_UNLOADING_TABLE);
         UnloadingTable l = (UnloadingTable) map.get(unloadingTable.getId());

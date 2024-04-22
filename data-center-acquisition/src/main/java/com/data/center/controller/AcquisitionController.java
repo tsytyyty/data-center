@@ -2,8 +2,8 @@ package com.data.center.controller;
 
 import com.data.center.pojo.result.Result;
 import com.data.center.service.DataAcquisitionService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+//import io.swagger.v3.oas.annotations.Operation;
+//import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 @RestController
-@Tag(name = "数据采集")
+//@Tag(name = "数据采集")
 public class AcquisitionController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class AcquisitionController {
      *         result.put("errorList", errorList);                                     //错误信息（List<String>）
      */
     @GetMapping("/data/acquisition")
-    @Operation(summary = "数据采集api")
+//    @Operation(summary = "数据采集api")
     public Result dataAcquisition() throws ExecutionException, InterruptedException {
         Map<String, Object> map = dataAcquisitionService.dataAcquisition();
         return new Result(200, "数据采集成功", map);

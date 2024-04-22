@@ -4,11 +4,9 @@ import com.data.center.pojo.Do.CustomerInformation;
 import com.data.center.pojo.Do.LoadingTable;
 import com.data.center.pojo.Do.LogisticsInformation;
 import com.data.center.pojo.Do.UnloadingTable;
-import io.swagger.v3.oas.models.security.SecurityScheme;
-import jakarta.annotation.Resource;
+
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 清洗后数据

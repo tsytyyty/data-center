@@ -3,20 +3,15 @@ package com.data.center.controller;
 import com.data.center.pojo.SelectSqlDto;
 import com.data.center.pojo.result.Result;
 import com.data.center.service.OpenSqlService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
 @RestController
-@Tag(name = "sql工作台")
 public class OpenSqlController {
 
     @Autowired
@@ -28,7 +23,6 @@ public class OpenSqlController {
      * 查询失败返回sql错误信息
      */
     @PostMapping("/selectTable")
-    @Operation(summary = "sql查询")
     public Result selectTable(@RequestBody SelectSqlDto dto){
         if (!(dto.getSql().contains("SELECT") || dto.getSql().contains("select"))){
             return new Result(500, "查询失败！", "权限不足！");

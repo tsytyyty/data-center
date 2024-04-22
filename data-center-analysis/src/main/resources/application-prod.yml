@@ -13,7 +13,7 @@ spring:
         group: data-center-group
   datasource:
     driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://10.4.59.42:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
     username: SYSDBA
     password: SYSDBA
   data:

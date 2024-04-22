@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DbUtil {
     private static String driver = "dm.jdbc.driver.DmDriver";
-    private static String url = "jdbc:dm://10.4.59.42:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
+    private static String url = "jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
     private static String username = "SYSDBA";
     private static String password = "SYSDBA";
 

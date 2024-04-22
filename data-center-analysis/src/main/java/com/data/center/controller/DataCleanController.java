@@ -5,8 +5,7 @@ import com.data.center.data.AfterCleanData;
 import com.data.center.data.OriginalData;
 import com.data.center.pojo.result.Result;
 import com.data.center.service.DataCleanService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
-@Tag(name = "数据清洗")
 public class DataCleanController implements AfterCleanData, OriginalData, RedisConstant {
 
     @Autowired
@@ -27,7 +25,6 @@ public class DataCleanController implements AfterCleanData, OriginalData, RedisC
     private DataCleanService dataCleanService;
 
     @GetMapping("/data/clean")
-    @Operation(summary = "数据清洗api")
     public Result dataClean() {
         boolean getLock = false;
         //加锁

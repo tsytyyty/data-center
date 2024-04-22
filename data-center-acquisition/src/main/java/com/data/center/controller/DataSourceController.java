@@ -3,8 +3,8 @@ package com.data.center.controller;
 import com.data.center.pojo.Do.DataSourceDo;
 import com.data.center.pojo.result.Result;
 import com.data.center.service.DataSourceService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+//import io.swagger.v3.oas.annotations.Operation;
+//import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@Tag(name = "数据源管理")
+//@Tag(name = "数据源管理")
 @RequestMapping("/dataSource")
 public class DataSourceController {
 
@@ -24,7 +24,7 @@ public class DataSourceController {
      * 成功：200   文件不存在：404   测试失败：500   空值：999
      */
     @PostMapping("/add")
-    @Operation(summary = "添加数据源")
+//    @Operation(summary = "添加数据源")
     public Result addDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
         Map<String, Object> map = null;
         if (dataSourceDo == null){
@@ -48,7 +48,7 @@ public class DataSourceController {
      * 成功：200   文件不存在：404    测试失败：500    空值：999
      */
     @PostMapping("/test/beforeAdd")
-    @Operation(summary = "测试数据源（添加数据源之前）")
+//    @Operation(summary = "测试数据源（添加数据源之前）")
     public Result testDataSourceBeforeAdd(@RequestBody DataSourceDo dataSourceDo) throws Exception {
         Map<String, Object> map = null;
         if (dataSourceDo == null){
@@ -72,7 +72,7 @@ public class DataSourceController {
      * 成功：200   测试失败：500    空值：999
      */
     @PostMapping("/test")
-    @Operation(summary = "测试数据源（修改数据源之前）")
+//    @Operation(summary = "测试数据源（修改数据源之前）")
     public Result testDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
         if (dataSourceDo == null){
             return new Result(999,"参数不能为空！",null);
@@ -92,7 +92,7 @@ public class DataSourceController {
      * 测试全部已有数据源
      */
     @GetMapping("/test/all")
-    @Operation(summary = "测试全部数据源")
+//    @Operation(summary = "测试全部数据源")
     public Result testAllDataSource() throws Exception {
         List<DataSourceDo> dataSourceDos = dataSourceService.getAllDataSource();
         for (DataSourceDo dataSourceDo : dataSourceDos) {
@@ -109,7 +109,7 @@ public class DataSourceController {
      * 成功：200   未找到数据源：403   文件不存在：404   测试未通过：500     空值：999
      */
     @PostMapping("/update")
-    @Operation(summary = "修改数据源")
+//    @Operation(summary = "修改数据源")
     public Result updateDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
         Map<String, Object> map = null;
         if (dataSourceDo == null){
@@ -135,7 +135,7 @@ public class DataSourceController {
      * 成功：200   未找到：403   空值：999
      */
     @GetMapping("/delete")
-    @Operation(summary = "删除数据源")
+//    @Operation(summary = "删除数据源")
     public Result deleteDataSource(@RequestParam String id) throws ClassNotFoundException {
         if (id == null){
             return new Result(999,"参数不能为空！",null);
@@ -145,7 +145,7 @@ public class DataSourceController {
     }
 
     @GetMapping("/list")
-    @Operation(summary = "查询所有数据源")
+//    @Operation(summary = "查询所有数据源")
     public Result getAllDataSource(){
         List<DataSourceDo> list = dataSourceService.getAllDataSource();
         return new Result(200,"查询成功！", list);

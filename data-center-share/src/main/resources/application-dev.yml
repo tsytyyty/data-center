@@ -1,5 +1,5 @@
 server:
-  port: 8095
+  port: 8090
   servlet:
     context-path: /share
 spring:
@@ -7,17 +7,24 @@ spring:
     name: share-server
   cloud:
     nacos:
-      server-addr: localhost:8848
+      server-addr: 10.4.53.14:8848
       discovery:
+        group: data-center-group
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
   datasource:
-    driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://localhost:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
-    username: SYSDBA
-    password: SYSDBA
+    primary:
+      driver-class: dm.jdbc.driver.DmDriver
+      jdbc-url: jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      username: SYSDBA
+      password: SYSDBA
+    secondary:
+      driver-class: dm.jdbc.driver.DmDriver
+      jdbc-url: jdbc:dm://59.110.34.218:30236/"data_center_share"?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      username: SYSDBA
+      password: SYSDBA001
   data:
     redis:
-      host: 127.0.0.1
+      host: 10.7.32.53
       port: 6379
       database: 0
 

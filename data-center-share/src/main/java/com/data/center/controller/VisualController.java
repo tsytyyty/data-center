@@ -5,8 +5,6 @@ import com.data.center.pojo.result.Result;
 import com.data.center.pojo.vo.PortGoodsThroughputVo;
 import com.data.center.pojo.vo.PortYoyQoqVo;
 import com.data.center.service.VisualService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +15,12 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@Tag(name = "可视化api")
 @RequestMapping("/visual/data")
 public class VisualController {
 
     @Autowired
     private VisualService visualService;
 
-    @Operation(summary = "xx港货物吞吐量信息")
     @GetMapping("/portGoodsThroughput")
     public Result portGoodsThroughput() {
         //查询
@@ -32,7 +28,6 @@ public class VisualController {
         return Result.success("查询成功！", map);
     }
 
-    @Operation(summary = "xx年港口吞吐量同比环比")
     @GetMapping("/YoYQoQ")
     public Result YoYQoQ(@RequestParam int year) {
         //查询
@@ -44,7 +39,6 @@ public class VisualController {
     }
 
 
-    @Operation(summary = "xx港口报表信息")
     @GetMapping("/portTotal")
     public Result portTotal() {
         //查询
