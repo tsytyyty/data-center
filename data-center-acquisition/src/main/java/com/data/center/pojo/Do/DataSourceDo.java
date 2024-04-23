@@ -54,7 +54,7 @@ public class DataSourceDo implements Serializable {
 
     /**
      * key——value
-     * database：数据表（minio：文件名）- 类型
+     * database：数据表（minio：文件名）—— 类型（CustomerInformation、LogisticsInformation、LoadingTable、UnloadingTable）
      */
     @TableField(typeHandler = JacksonTypeHandler.class)
     private Map<String, String> dataAndType;
@@ -67,5 +67,4 @@ public class DataSourceDo implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
-
 }

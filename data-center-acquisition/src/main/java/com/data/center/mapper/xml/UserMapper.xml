@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.data.center.mapper.UserMapper">
+
+    <sql id="selectUser">
+        id,username,password,real_name,id_card,phone,email,"ACTIVE"
+    </sql>
+
+    <sql id="insertUser">
+        username,password,real_name,id_card,phone,email,"ACTIVE"
+    </sql>
+
+    <sql id="selectTicket">
+        ID,USER_ID,TICKET,POWER,"STATUS"
+    </sql>
+
+    <sql id="insertTicket">
+        USER_ID,TICKET,POWER,"STATUS"
+    </sql>
+    
+    <resultMap id="userMapper" type="com.data.center.pojo.Do.User">
+        <result column="REAL_NAME" property="realName"/>
+        <result column="ID_CARD" property="idCard"/>
+    </resultMap>
+
+    <resultMap id="ticketMapper" type="com.data.center.pojo.Do.LoginTicket">
+        <result column="USER_ID" property="userId"/>
+    </resultMap>
+
+    <select id="selectUserById" parameterType="int" resultMap="userMapper">
+        select <include refid="selectUser"></include> from "USER"
+        where ID = #{id};
+    </select>
+
+    <select id="selectUserByUsername" parameterType="string" resultMap="userMapper">
+        select * from "USER"
+        where USERNAME = #{username};
+    </select>
+
+    <select id="selectUserByIdCard" parameterType="string" resultMap="userMapper">
+        select <include refid="selectUser"></include> from "USER"
+        where ID_CARD = #{idCard};
+    </select>
+
+    <insert id="insertUser" parameterType="com.data.center.pojo.Do.User">
+        insert into "USER" (<include refid="insertUser"></include>)
+        values (#{username},#{password},#{realName},#{idCard},#{phone},#{email},#{active})
+    </insert>
+
+
+
+    <select id="selectTicketByTicket" parameterType="string" resultMap="ticketMapper">
+        select <include refid="selectTicket"></include> from login_ticket
+        where TICKET = #{ticket}
+    </select>
+
+    <insert id="insertTicket" parameterType="com.data.center.pojo.Do.LoginTicket">
+        insert into login_ticket (<include refid="insertTicket"></include>)
+        values (#{userId},#{ticket},#{power},#{status})
+    </insert>
+
+    <update id="updateTicketStatus">
+        update login_ticket set "STATUS" = 1 where user_id = #{userId}
+    </update>
+
+    <update id="updatePower">
+        update "USER" set "ACTIVE" = #{power} where ID = #{id}
+    </update>
+
+    <select id="needPowerUser" resultMap="userMapper">
+        select <include refid="selectUser"></include> from "USER"
+        where ACTIVE = 0;
+    </select>
+
+    <select id="selectAllUser" resultMap="userMapper">
+        select <include refid="selectUser"></include> from "USER";
+    </select>
+
+
+</mapper>

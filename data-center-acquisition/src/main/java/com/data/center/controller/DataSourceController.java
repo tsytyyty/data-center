@@ -1,10 +1,12 @@
 package com.data.center.controller;
 
 import com.data.center.pojo.Do.DataSourceDo;
+import com.data.center.pojo.dto.DataSourceDto;
 import com.data.center.pojo.result.Result;
 import com.data.center.service.DataSourceService;
 //import io.swagger.v3.oas.annotations.Operation;
 //import io.swagger.v3.oas.annotations.tags.Tag;
+import com.data.center.utils.DtoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,8 @@ public class DataSourceController {
      */
     @PostMapping("/add")
 //    @Operation(summary = "添加数据源")
-    public Result addDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
+    public Result addDataSource(@RequestBody DataSourceDto dataSourceDto) throws Exception {
+        DataSourceDo dataSourceDo = DtoUtil.DataSourceDtoToDo(dataSourceDto);
         Map<String, Object> map = null;
         if (dataSourceDo == null){
             return new Result(999,"参数不能为空！",null);
@@ -33,7 +36,7 @@ public class DataSourceController {
         map = dataSourceService.addDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(code,"添加成功！", map.get("dataSourceDo"));
+            return new Result(0,"添加成功！", map.get("dataSourceDo"));
         } else if (code == 404) {
             return new Result(code,"文件路径或数据表不存在！", map.get("errorList"));
         } else if (code == 500) {
@@ -49,7 +52,8 @@ public class DataSourceController {
      */
     @PostMapping("/test/beforeAdd")
 //    @Operation(summary = "测试数据源（添加数据源之前）")
-    public Result testDataSourceBeforeAdd(@RequestBody DataSourceDo dataSourceDo) throws Exception {
+    public Result testDataSourceBeforeAdd(@RequestBody DataSourceDto dataSourceDto) throws Exception {
+        DataSourceDo dataSourceDo = DtoUtil.DataSourceDtoToDo(dataSourceDto);
         Map<String, Object> map = null;
         if (dataSourceDo == null){
             return new Result(999,"参数不能为空！",null);
@@ -57,7 +61,7 @@ public class DataSourceController {
         map = dataSourceService.addDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(code,"添加成功！", dataSourceDo);
+            return new Result(0,"添加成功！", dataSourceDo);
         } else if (code == 404) {
             return new Result(code,"文件路径或数据表不存在！", map.get("errorList"));
         } else if (code == 500) {
@@ -73,14 +77,14 @@ public class DataSourceController {
      */
     @PostMapping("/test")
 //    @Operation(summary = "测试数据源（修改数据源之前）")
-    public Result testDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
+    public Result testDataSource(@RequestBody DataSourceDto dataSourceDto) throws Exception {
+        DataSourceDo dataSourceDo = DtoUtil.DataSourceDtoToDo(dataSourceDto);
         if (dataSourceDo == null){
             return new Result(999,"参数不能为空！",null);
         }
-        Map<String, Object> map = null;
         int code = dataSourceService.testDataSource(dataSourceDo);
         if (code == 200){
-            return new Result(code,"添加成功！", dataSourceDo);
+            return new Result(0,"测试通过！", dataSourceDo);
         } else if (code == 500) {
             return new Result(code,"连接测试未通过！", dataSourceDo);
         } else {
@@ -101,7 +105,7 @@ public class DataSourceController {
                 return new Result(code,"连接测试未通过！", dataSourceDo);
             }
         }
-        return new Result(200,"连接测试通过！", dataSourceDos);
+        return new Result(0,"连接测试通过！", dataSourceDos);
     }
 
     /**
@@ -110,7 +114,8 @@ public class DataSourceController {
      */
     @PostMapping("/update")
 //    @Operation(summary = "修改数据源")
-    public Result updateDataSource(@RequestBody DataSourceDo dataSourceDo) throws Exception {
+    public Result updateDataSource(@RequestBody DataSourceDto dataSourceDto) throws Exception {
+        DataSourceDo dataSourceDo = DtoUtil.DataSourceDtoToDo(dataSourceDto);
         Map<String, Object> map = null;
         if (dataSourceDo == null){
             return new Result(999,"参数不能为空！",null);
@@ -118,7 +123,7 @@ public class DataSourceController {
         map = dataSourceService.updateDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(code,"修改成功！", dataSourceDo);
+            return new Result(0,"修改成功！", dataSourceDo);
         } else if (code == 403) {
             return new Result(code,"未找到数据源id！", dataSourceDo);
         } else if (code == 404) {
@@ -141,14 +146,14 @@ public class DataSourceController {
             return new Result(999,"参数不能为空！",null);
         }
         int code = dataSourceService.deleteDataSource(id);
-        return new Result(code,code == 200 ? "删除成功！" : "未找到数据源！",id);
+        return new Result(0,code == 200 ? "删除成功！" : "未找到数据源！",id);
     }
 
     @GetMapping("/list")
 //    @Operation(summary = "查询所有数据源")
     public Result getAllDataSource(){
         List<DataSourceDo> list = dataSourceService.getAllDataSource();
-        return new Result(200,"查询成功！", list);
+        return new Result(0,"查询成功！", list);
     }
 
 

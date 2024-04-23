@@ -21,11 +21,11 @@ public class Result {
     private Object object;
 
     public static Result success(Object object) {
-        return new Result().setCode(200).setMessage("success").setObject(object);
+        return new Result().setCode(0).setMessage("success").setObject(object);
     }
 
     public static Result success(String msg, Object object) {
-        return new Result().setCode(200).setMessage(msg).setObject(object);
+        return new Result().setCode(0).setMessage(msg).setObject(object);
     }
 
     public static Result error(String message) {

@@ -18,7 +18,7 @@ spring:
     password: SYSDBA
   data:
     redis:
-      host: 127.0.0.1
+      host: 10.4.53.14
       port: 6379
       database: 0
 

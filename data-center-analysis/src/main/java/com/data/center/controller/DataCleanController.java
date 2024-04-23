@@ -43,7 +43,7 @@ public class DataCleanController implements AfterCleanData, OriginalData, RedisC
                 //解锁
                 redissonClient.getLock("data_transmit_and_clean").unlock();
             }
-            return new Result(200, "数据清洗成功", null);
+            return new Result(0, "数据清洗成功", null);
         }else {
             return Result.error("数据清洗失败，获取锁失败！");
         }

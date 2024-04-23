@@ -21,6 +21,9 @@ public class VisualController {
     @Autowired
     private VisualService visualService;
 
+    /**
+     * 所有港口商品吞吐量
+     */
     @GetMapping("/portGoodsThroughput")
     public Result portGoodsThroughput() {
         //查询
@@ -28,6 +31,9 @@ public class VisualController {
         return Result.success("查询成功！", map);
     }
 
+    /**
+     * 某年份所有港口同比环比
+     */
     @GetMapping("/YoYQoQ")
     public Result YoYQoQ(@RequestParam int year) {
         //查询
@@ -39,11 +45,14 @@ public class VisualController {
     }
 
 
+    /**
+     * 港口大报表
+     */
     @GetMapping("/portTotal")
-    public Result portTotal() {
+    public Result portTotal(@RequestParam String port) {
         //查询
-
-        return Result.success("查询成功！");
+        Map<String, Object> map = visualService.selectPortTotal(port);
+        return Result.success("查询成功！",map);
     }
 
 

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="前端调试">
+      <change afterPath="$PROJECT_DIR$/audit.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/mapper/xml/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/LoginTicket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/dto/DataSourceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/license.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/TestMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/license.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/contant/CommunityConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/utils/UUID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-gateway/src/main/java/com/data/center/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/license.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/AcquisitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/AcquisitionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/DataSourceDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/DataSourceDo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/NacosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/NacosConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/pojo/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/pojo/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/lib/DmJdbcDriver18.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-maven-3.9.2" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2bJkufr7Bas7FiGe9YL0wAuPUgb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "SQL-Insert-Multirow.sql.groovy",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/project/IntelliJ IDEA 2022.2.2/data_center_microservices/data-center-share/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "项目",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35517243",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "132712756ebee285ed78fbcc77bad4ef",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "java.sql.Driver"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-share\src\main\resources" />
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-analysis\src\main\resources" />
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\resources" />
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\java\com\data\center\mapper\xml" />
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-common\src\main\java\com\data\center" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-anlysis" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.data.center.config" />
+      <recent name="com.data.center.utils" />
+      <recent name="com.data.center.pojo.Do" />
+      <recent name="com.data.center.mapper" />
+      <recent name="com.data.center.contant" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn package" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="应用程序.TestMain">
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestMain" />
+      <module name="data-center-acquisition" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AcquisitionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="data-center-acquisition" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.AcquisitionApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnalysisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="data-center-analysis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.AnalysisApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="data-center-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.GatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="data-center-share" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.ShareApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ShareApplication" />
+      <item itemvalue="Spring Boot.AcquisitionApplication" />
+      <item itemvalue="Spring Boot.AnalysisApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="应用程序.TestMain" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AcquisitionApplication" />
+        <item itemvalue="应用程序.TestMain" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.AnalysisApplication" />
+        <item itemvalue="Spring Boot.ShareApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="" />
+      <created>1705940795443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705940795443</updated>
+      <workItem from="1705940796950" duration="13170000" />
+      <workItem from="1706176051114" duration="10217000" />
+      <workItem from="1706661108616" duration="596000" />
+      <workItem from="1706839243510" duration="3487000" />
+      <workItem from="1706882361720" duration="650000" />
+      <workItem from="1706963062400" duration="113000" />
+      <workItem from="1710746588040" duration="1345000" />
+      <workItem from="1710767843083" duration="69798000" />
+      <workItem from="1711111135994" duration="5386000" />
+      <workItem from="1711174081970" duration="49959000" />
+      <workItem from="1712540812049" duration="47759000" />
+      <workItem from="1712804617321" duration="177000" />
+      <workItem from="1712804810118" duration="24457000" />
+      <workItem from="1712903706304" duration="19723000" />
+      <workItem from="1712999466363" duration="1009000" />
+      <workItem from="1713072899528" duration="35433000" />
+      <workItem from="1713251857794" duration="40862000" />
+      <workItem from="1713359391321" duration="43846000" />
+      <workItem from="1713518354649" duration="5249000" />
+      <workItem from="1713584919968" duration="24158000" />
+      <workItem from="1713685321270" duration="20905000" />
+      <workItem from="1713768243297" duration="33445000" />
+    </task>
+    <task id="LOCAL-00001" summary="2024.3.22">
+      <created>1711111784893</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711111784893</updated>
+    </task>
+    <task id="LOCAL-00002" summary="2024.4.9 minio数据采集">
+      <created>1712656037324</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712656037324</updated>
+    </task>
+    <task id="LOCAL-00003" summary="数据采集：只有成功，不提交Redis">
+      <created>1712843299761</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712843299761</updated>
+    </task>
+    <task id="LOCAL-00004" summary="数据采集、清洗、分析通过&#10;数据共享未测试">
+      <created>1713414378679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713414378679</updated>
+    </task>
+    <task id="LOCAL-00005" summary="tongweb调试">
+      <created>1713685046815</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713685046815</updated>
+    </task>
+    <task id="LOCAL-00006" summary="前端调试">
+      <created>1713774714749</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713774714749</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="2024.3.22" />
+    <MESSAGE value="2024.4.9 minio数据采集" />
+    <MESSAGE value="数据采集：只有成功，不提交Redis" />
+    <MESSAGE value="数据采集、清洗、分析通过&#10;数据共享未测试" />
+    <MESSAGE value="tongweb调试" />
+    <MESSAGE value="前端调试" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端调试" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

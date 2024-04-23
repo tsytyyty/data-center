@@ -13,13 +13,14 @@ spring:
         group: data-center-group
   datasource:
     driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+#    url: jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8    #本机
+    url: jdbc:dm://10.7.32.53:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8    #服务器
     username: SYSDBA
     password: SYSDBA
   data:
     redis:
-      # 本机
-      host: 10.4.53.14
+      host: 10.4.53.14    #本机
+#      host: 10.7.32.53    #服务器
       port: 6379
       database: 0
 

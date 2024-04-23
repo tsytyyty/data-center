@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@localhost" uuid="646c4659-1cf2-4814-99e8-ba24a1ef9f1f">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="DM" uuid="72163b23-95aa-42ee-bdb3-4529f2247cd7">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>dm.jdbc.driver.DmDriver</jdbc-driver>
+      <jdbc-url>jdbc:dm://localhost:5236</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="阿里云达梦" uuid="8d93f2b1-258a-44e7-96fa-dbb37de92030">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>dm.jdbc.driver.DmDriver</jdbc-driver>
+      <jdbc-url>jdbc:dm://59.110.34.218:30236</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="国产达梦" uuid="6a9479f8-988b-40be-8266-352dc5d0c86d">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>dm.jdbc.driver.DmDriver</jdbc-driver>
+      <jdbc-url>jdbc:dm://10.7.32.53:5236</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

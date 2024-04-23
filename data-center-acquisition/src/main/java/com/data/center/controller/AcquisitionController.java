@@ -31,7 +31,7 @@ public class AcquisitionController {
 //    @Operation(summary = "数据采集api")
     public Result dataAcquisition() throws ExecutionException, InterruptedException {
         Map<String, Object> map = dataAcquisitionService.dataAcquisition();
-        return new Result(200, "数据采集成功", map);
+        return new Result(0, "数据采集成功", map);
     }
 
 }
