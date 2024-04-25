@@ -29,7 +29,7 @@ public class DataCleanController implements AfterCleanData, OriginalData, RedisC
         boolean getLock = false;
         //加锁
         try {
-            getLock = redissonClient.getLock(LOCK_TRANSMIT_CLEAN).tryLock(10 , 10, TimeUnit.SECONDS);
+            getLock = redissonClient.getLock(LOCK_TRANSMIT_CLEAN).tryLock(10 , 30, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -32,4 +32,12 @@
         ORDER BY flow_time DESC;
     </select>
 
+    <select id="selectPrediction" parameterType="string" resultType="com.data.center.pojo.vo.PredictionVo">
+        select port, goods, throughput1, throughput2, throughput3, throughput4, throughput5, throughput6
+        from prediction
+        <if test="port!=null">
+            WHERE port = #{port}
+        </if>
+    </select>
+
 </mapper>

@@ -1,13 +1,12 @@
 package com.data.center.mapper;
 
 import com.data.center.pojo.Do.PortThroughput;
-import com.data.center.pojo.vo.PortGoodsFlowTimeVo;
-import com.data.center.pojo.vo.PortGoodsThroughputVo;
-import com.data.center.pojo.vo.PortThroughputVo;
-import com.data.center.pojo.vo.PortYoyQoqVo;
+import com.data.center.pojo.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -27,4 +26,9 @@ public interface VisualMapper {
     // xx港货物平均周转时间
     List<PortGoodsFlowTimeVo> selectPortGoodsFlowTime(String port);
 
+    // xx港xx货物未来六月预测
+    List<PredictionVo> selectPrediction(@Param("port") String port);
+
+    @Select("select DESCRIPTION,URL from VISUAL;")
+    List<VisualVo> selectVisualVo();
 }

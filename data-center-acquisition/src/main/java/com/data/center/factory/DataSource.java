@@ -21,11 +21,6 @@ public interface DataSource {
     Map<String, Object> testConnectBeforeAdd() throws Exception;
 
     /**
-     * 测试连接，更新之前
-     */
-//    Map<String, Object> testConnectBeforeUpdate() throws Exception;
-
-    /**
      * 200成功   500连接失败
      * 测试已有数据源
      */

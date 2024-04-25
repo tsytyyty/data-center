@@ -114,7 +114,7 @@ public class ConnectionPool implements IConnectionPool {
     /**
      * 异步创建连接
      */
-    public void createConnectionAsync() {
+    private void createConnectionAsync() {
         new Thread(() -> {
             Connection connection = DbUtil.createConnection();
             freeConnectPool.offer(connection);

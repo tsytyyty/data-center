@@ -48,13 +48,7 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="">
-            <node kind="schema">
-              <name qname="data_center_acquisition" />
-              <name qname="DATA_CENTER_ANALYSIS" />
-              <name qname="data_center_share" />
-              <name qname="SYS" />
-              <name qname="SYSAUDITOR" />
-            </node>
+            <node kind="schema" qname="DATA_CENTER_SHARE" />
           </node>
         </introspection-scope>
       </schema-mapping>

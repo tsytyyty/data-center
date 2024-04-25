@@ -55,6 +55,14 @@ public class VisualController {
         return Result.success("查询成功！",map);
     }
 
+    /**
+     * 查询所有可视化图表URL
+     */
+    @GetMapping("/getAllVisualUrl")
+    public Result getAllVisualUrl() {
+        return Result.success("查询成功！", visualService.getAllVisualUrl());
+    }
+
 
 
 }

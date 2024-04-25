@@ -3,10 +3,7 @@ package com.data.center.service.Impl;
 import com.data.center.mapper.VisualMapper;
 import com.data.center.pojo.Do.PortGoodsThroughput;
 import com.data.center.pojo.Do.PortYoyQoq;
-import com.data.center.pojo.vo.PortGoodsFlowTimeVo;
-import com.data.center.pojo.vo.PortGoodsThroughputVo;
-import com.data.center.pojo.vo.PortThroughputVo;
-import com.data.center.pojo.vo.PortYoyQoqVo;
+import com.data.center.pojo.vo.*;
 import com.data.center.service.VisualService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -67,10 +64,22 @@ public class VisualServiceImpl implements VisualService {
         List<PortGoodsThroughputVo> portGoodsThroughputVos = visualMapper.selectPortGoodsThroughput(port);
         // 货物平均周转时间
         List<PortGoodsFlowTimeVo> portGoodsFlowTimeVos = visualMapper.selectPortGoodsFlowTime(port);
+        // 货物未来6月总吞吐预测
+        List<PredictionVo> predictionVos = visualMapper.selectPrediction(port);
+        predictionVos.forEach(p -> {
+            p.computeTotal();
+        });
 
         map.put("portsThroughput", portsThroughputVos);
         map.put("goodsFlowTime", portGoodsFlowTimeVos);
         map.put("goodsThroughput", portGoodsThroughputVos);
+        map.put("prediction", predictionVos);
         return null;
+    }
+
+    @Override
+    public List<VisualVo> getAllVisualUrl() {
+        List<VisualVo> visualVos = visualMapper.selectVisualVo();
+        return visualVos;
     }
 }

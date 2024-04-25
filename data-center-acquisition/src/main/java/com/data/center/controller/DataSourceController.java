@@ -10,6 +10,7 @@ import com.data.center.utils.DtoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,9 +41,9 @@ public class DataSourceController {
         } else if (code == 404) {
             return new Result(code,"文件路径或数据表不存在！", map.get("errorList"));
         } else if (code == 500) {
-            return new Result(code,"连接测试未通过！", dataSourceDo);
+            return new Result(code,"连接测试未通过！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else {
-            return new Result(code,"未知错误！", dataSourceDo);
+            return new Result(code,"未知错误！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         }
     }
 
@@ -61,13 +62,13 @@ public class DataSourceController {
         map = dataSourceService.addDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(0,"添加成功！", dataSourceDo);
+            return new Result(0,"添加成功！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else if (code == 404) {
             return new Result(code,"文件路径或数据表不存在！", map.get("errorList"));
         } else if (code == 500) {
-            return new Result(code,"连接测试未通过！", dataSourceDo);
+            return new Result(code,"连接测试未通过！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else {
-            return new Result(code,"未知错误！", dataSourceDo);
+            return new Result(code,"未知错误！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         }
     }
 
@@ -84,11 +85,11 @@ public class DataSourceController {
         }
         int code = dataSourceService.testDataSource(dataSourceDo);
         if (code == 200){
-            return new Result(0,"测试通过！", dataSourceDo);
+            return new Result(0,"测试通过！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else if (code == 500) {
-            return new Result(code,"连接测试未通过！", dataSourceDo);
+            return new Result(code,"连接测试未通过！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else {
-            return new Result(code,"未知错误！", dataSourceDo);
+            return new Result(code,"未知错误！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         }
     }
 
@@ -102,10 +103,10 @@ public class DataSourceController {
         for (DataSourceDo dataSourceDo : dataSourceDos) {
             int code = dataSourceService.testDataSource(dataSourceDo);
             if (code != 200){
-                return new Result(code,"连接测试未通过！", dataSourceDo);
+                return new Result(code,"连接测试未通过！", null);
             }
         }
-        return new Result(0,"连接测试通过！", dataSourceDos);
+        return new Result(0,"连接测试通过！", null);
     }
 
     /**
@@ -123,15 +124,15 @@ public class DataSourceController {
         map = dataSourceService.updateDataSource(dataSourceDo);
         int code = (int) map.get("code");
         if (code == 200){
-            return new Result(0,"修改成功！", dataSourceDo);
+            return new Result(0,"修改成功！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else if (code == 403) {
-            return new Result(code,"未找到数据源id！", dataSourceDo);
+            return new Result(code,"未找到数据源id！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else if (code == 404) {
             return new Result(code,"文件路径或数据表不存在！", map.get("errorList"));
         } else if (code == 500) {
-            return new Result(code,"连接测试未通过！", dataSourceDo);
+            return new Result(code,"连接测试未通过！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         } else {
-            return new Result(code,"未知错误！", dataSourceDo);
+            return new Result(code,"未知错误！", DtoUtil.DataSourceDoToDto(dataSourceDo));
         }
     }
 
@@ -153,7 +154,12 @@ public class DataSourceController {
 //    @Operation(summary = "查询所有数据源")
     public Result getAllDataSource(){
         List<DataSourceDo> list = dataSourceService.getAllDataSource();
-        return new Result(0,"查询成功！", list);
+        List<DataSourceDto> list1 = new ArrayList<>();
+        for (DataSourceDo dataSourceDo : list) {
+            DataSourceDto dataSourceDto = DtoUtil.DataSourceDoToDto(dataSourceDo);
+            list1.add(dataSourceDto);
+        }
+        return new Result(0,"查询成功！", list1);
     }
 
 

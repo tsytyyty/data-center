@@ -9,6 +9,7 @@ import com.data.center.pojo.Do.DataSourceDo;
 import com.data.center.pojo.dto.DataSourceDto;
 import com.data.center.pojo.result.Result;
 import com.data.center.service.DataAcquisitionService;
+import com.data.center.service.DataSourceService;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import org.apache.poi.ss.formula.functions.T;
@@ -31,6 +32,10 @@ import java.util.concurrent.locks.Lock;
 @SpringBootTest(classes = AcquisitionApplication.class)
 public class AcqTest {
 
+    @Autowired
+    private DataSourceController dataSourceController;
+    @Autowired
+    private DataSourceService dataSourceService;
     @Test
     public void test() throws Exception {
         DataSourceDo d = new DataSourceDo();
@@ -39,14 +44,26 @@ public class AcqTest {
         d.setPassword("admin1234");
         d.setBucketName("test");
         Map<String, String> dataAndType = new HashMap<>();
-        dataAndType.put("卸货表2021.txt", "UnloadingTable");
-        dataAndType.put("装货表2021.txt", "LoadingTable");
         dataAndType.put("客户信息2021.xlsx", "CustomerInformation");
+        dataAndType.put("客户信息2020.xlsx", "CustomerInformation");
+
+        dataAndType.put("物流信息2020.xlsx", "LogisticsInformation");
         dataAndType.put("物流信息2021.txt", "LogisticsInformation");
-//        d.setId("c91af1ff5d0a44a28eed3598fddab714");
+        dataAndType.put("物流信息2022.txt", "LogisticsInformation");
+
+        dataAndType.put("卸货表2020.xlsx", "UnloadingTable");
+        dataAndType.put("卸货表2021.txt", "UnloadingTable");
+        dataAndType.put("卸货表2022.txt", "UnloadingTable");
+
+        dataAndType.put("装货表2020.xlsx", "LoadingTable");
+        dataAndType.put("装货表2021.txt", "LoadingTable");
+        dataAndType.put("装货表2022.txt", "LoadingTable");
+        d.setId("c91af1ff5d0a44a28eed3598fddab714");
         d.setType("minio");
         d.setDataAndType(dataAndType);
-        System.out.println(JSON.toJSON(d));
+        System.out.println(d);
+//        Map<String, Object> map = dataSourceService.updateDataSource(d);
+//        System.out.println(map.get("code"));
 
 
 //        DataSourceDo d = new DataSourceDo();

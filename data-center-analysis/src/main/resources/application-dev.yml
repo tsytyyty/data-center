@@ -8,6 +8,7 @@ spring:
   cloud:
     nacos:
       server-addr: 10.4.53.14:8848
+#      server-addr: 192.168.1.210:8848    #服务器
       discovery:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
         group: data-center-group

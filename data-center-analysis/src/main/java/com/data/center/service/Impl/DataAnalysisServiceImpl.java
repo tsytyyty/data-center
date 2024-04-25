@@ -42,9 +42,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService, AfterCleanD
             long time = loadingTable.getDepartureTime().getTime() - loadingTable.getWorkBeginTime().getTime();
             portGoodsYearMonthThroughput(port, goods, year, month, weight);
             //各港口货物出口量分析
-            portGoods_output_MAP(goods, port, weight);
+            portGoods_output_MAP(port, goods, weight);
             //港口货物周转时间分析
-            portGoods_flowTime_MAP(goods, port, time);
+            portGoods_flowTime_MAP(port, goods, time);
         });
         clean_loading_table.clear();
 
@@ -61,7 +61,7 @@ public class DataAnalysisServiceImpl implements DataAnalysisService, AfterCleanD
             //各港口货物入口量分析
             portGoods_input_MAP(goods, port, weight);
             //港口货物周转时间分析
-            portGoods_flowTime_MAP(goods, port, time);
+            portGoods_flowTime_MAP(port, goods, time);
         });
         clean_unloading_table.clear();
 
@@ -231,6 +231,13 @@ public class DataAnalysisServiceImpl implements DataAnalysisService, AfterCleanD
                 else if (yearPortMonth_throughput.containsKey(keyYearPortMonth(year, port, month - 1))) {
                     qoq = (double) (yearPortMonth_throughput.get(yearPortMonth) - yearPortMonth_throughput.get(keyYearPortMonth(year, port, month - 1)))
                             / yearPortMonth_throughput.get(keyYearPortMonth(year, port, month - 1)) * 100;
+                }
+                //过滤极端数据
+                if(qoq > 1000 || qoq < -1000){
+                    qoq = 0;
+                }
+                if(yoy > 1000 || yoy < -1000){
+                    yoy = 0;
                 }
                 // 将计算结果添加到portYoyQoqList列表中
                 portYoyQoqList.add(new PortYoyQoq(0, port, year, month, yearPortMonth_throughput.get(yearPortMonth),

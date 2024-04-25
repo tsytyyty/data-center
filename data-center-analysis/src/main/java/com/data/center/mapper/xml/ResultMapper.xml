@@ -59,7 +59,7 @@
 
     <insert id="yoyQoqEveryYear" parameterType="list">
         insert into port_yoy_qoq
-        (port, year, month, throughput, yoy, qoq)
+        (port, "YEAR", "MONTH", throughput, yoy, qoq)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.port},#{item.year},#{item.month},#{item.throughput},#{item.yoy},#{item.qoq})

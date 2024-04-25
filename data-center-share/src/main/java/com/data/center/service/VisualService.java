@@ -4,6 +4,7 @@ import com.data.center.pojo.Do.PortGoodsThroughput;
 import com.data.center.pojo.Do.PortYoyQoq;
 import com.data.center.pojo.vo.PortGoodsThroughputVo;
 import com.data.center.pojo.vo.PortYoyQoqVo;
+import com.data.center.pojo.vo.VisualVo;
 
 import java.util.List;
 import java.util.Map;
@@ -17,5 +18,6 @@ public interface VisualService {
 
     Map<String, Object> selectPortTotal(String port);
 
+    List<VisualVo> getAllVisualUrl();
 
 }

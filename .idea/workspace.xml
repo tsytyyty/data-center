@@ -4,41 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="前端调试">
-      <change afterPath="$PROJECT_DIR$/audit.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/mapper/xml/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/LoginTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/dto/DataSourceDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/license.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/TestMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/license.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/contant/CommunityConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/utils/UUID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-gateway/src/main/java/com/data/center/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/license.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/AcquisitionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/AcquisitionController.java" afterDir="false" />
+    <list default="true" id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="Tongweb内嵌版本">
+      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pojo/vo/PredictionVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pojo/vo/VisualVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/prediction.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/简介.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/预测.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9479f8-988b-40be-8266-352dc5d0c86d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9479f8-988b-40be-8266-352dc5d0c86d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/72163b23-95aa-42ee-bdb3-4529f2247cd7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72163b23-95aa-42ee-bdb3-4529f2247cd7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d93f2b1-258a-44e7-96fa-dbb37de92030.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d93f2b1-258a-44e7-96fa-dbb37de92030.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audit.log" beforeDir="false" afterPath="$PROJECT_DIR$/audit.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/DataSourceDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/pojo/Do/DataSourceDo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-analysis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/mapper/xml/ResultMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/mapper/xml/ResultMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataAnalysisServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/NacosConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/NacosConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/pojo/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/pojo/result/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-share/lib/DmJdbcDriver18.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-share/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/OpenSqlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/OpenSqlController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/VisualMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/VisualMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/xml/VisualMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/xml/VisualMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/Impl/VisualServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/Impl/VisualServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/VisualService.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/VisualService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/test/java/ConnectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/test/java/ConnectTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,9 +83,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL-Insert-Multirow.sql.groovy",
+    "database.data.extractors.current.export.id": "SQL-Insert-Statements.sql.groovy",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/project/IntelliJ IDEA 2022.2.2/data_center_microservices/data-center-share/src/main/resources",
+    "last_opened_file_path": "D:/project/IntelliJ IDEA 2022.2.2/data_center_microservices/脚本",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -106,6 +102,9 @@
     "DatabaseDriversLRU": [
       "mysql",
       "java.sql.Driver"
+    ],
+    "RunConfigurationTargetLRU": [
+      "6a9479f8-988b-40be-8266-352dc5d0c86d/database/\"\"#1/schema/\"DATA_CENTER_ANALYSIS\""
     ]
   }
 }]]></component>
@@ -114,11 +113,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\脚本" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-share\src\main\resources" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-analysis\src\main\resources" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\resources" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\java\com\data\center\mapper\xml" />
-      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-common\src\main\java\com\data\center" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-anlysis" />
@@ -144,10 +143,19 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="应用程序.TestMain">
-    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestMain" />
-      <module name="data-center-acquisition" />
+  <component name="RunManager" selected="JUnit.ConnectTest.test">
+    <configuration name="prediction.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/脚本/prediction.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="6a9479f8-988b-40be-8266-352dc5d0c86d" namespace="database/&amp;quot;&amp;quot;#1/schema/&quot;DATA_CENTER_ANALYSIS&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-center-share" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ConnectTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,33 +199,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="data-center-share" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.ShareApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.data.center.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Spring Boot.ShareApplication" />
+      <item itemvalue="JUnit.ConnectTest.test" />
       <item itemvalue="Spring Boot.AcquisitionApplication" />
       <item itemvalue="Spring Boot.AnalysisApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="应用程序.TestMain" />
+      <item itemvalue="数据库脚本.prediction.sql" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.AcquisitionApplication" />
-        <item itemvalue="应用程序.TestMain" />
         <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.AnalysisApplication" />
-        <item itemvalue="Spring Boot.ShareApplication" />
+        <item itemvalue="Spring Boot.AcquisitionApplication" />
+        <item itemvalue="JUnit.ConnectTest.test" />
+        <item itemvalue="数据库脚本.prediction.sql" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +245,10 @@
       <workItem from="1713518354649" duration="5249000" />
       <workItem from="1713584919968" duration="24158000" />
       <workItem from="1713685321270" duration="20905000" />
-      <workItem from="1713768243297" duration="33445000" />
+      <workItem from="1713768243297" duration="41282000" />
+      <workItem from="1713940789459" duration="12174000" />
+      <workItem from="1714008083566" duration="2000" />
+      <workItem from="1714020378844" duration="36909000" />
     </task>
     <task id="LOCAL-00001" summary="2024.3.22">
       <created>1711111784893</created>
@@ -294,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713774714749</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tongweb内嵌版本">
+      <created>1713881752115</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713881752115</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +324,8 @@
     <MESSAGE value="数据采集、清洗、分析通过&#10;数据共享未测试" />
     <MESSAGE value="tongweb调试" />
     <MESSAGE value="前端调试" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端调试" />
+    <MESSAGE value="Tongweb内嵌版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tongweb内嵌版本" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

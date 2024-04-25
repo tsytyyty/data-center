@@ -30,7 +30,7 @@ public class OpenSqlController {
         try {
             List<Map<String, Object>> list = openSqlService.selectData(dto.getUsername(), dto.getSql());
             //将查询的结果存储到Map中
-            return new Result(200, "查询成功！", list);
+            return new Result(0, "查询成功！", list);
         }catch (Exception e){
             log.error(e.getMessage());
             return new Result(500, "查询失败！", e.getMessage());
@@ -45,7 +45,7 @@ public class OpenSqlController {
     public Result saveResult(@RequestParam String username){
         //建立数据库表
         int code = openSqlService.saveData(username);
-        return new Result(code, code == 200 ? "保存成功！" : "保存失败，数据为空", null);
+        return new Result(0, code == 200 ? "保存成功！" : "保存失败，数据为空", null);
     }
 
 

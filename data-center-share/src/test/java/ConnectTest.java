@@ -1,5 +1,7 @@
 import com.data.center.ShareApplication;
+import com.data.center.controller.VisualController;
 import com.data.center.pojo.Do.PortGoodsThroughput;
+import com.data.center.pojo.result.Result;
 import com.data.center.pool.ConnectionPool;
 import com.data.center.service.Impl.OpenSqlServiceImpl;
 import com.data.center.service.VisualService;
@@ -25,11 +27,15 @@ public class ConnectTest {
 //    @Autowired
 //    private VisualService visualService;
 //
-//    @Test
-//    public void test() throws ExecutionException, InterruptedException, SQLException {
-//
-//
-//    }
+
+    @Autowired
+    private VisualController visualController;
+    @Test
+    public void test() throws ExecutionException, InterruptedException, SQLException {
+
+        Result allVisualUrl = visualController.getAllVisualUrl();
+        System.out.println(allVisualUrl);
+    }
 
 
 
