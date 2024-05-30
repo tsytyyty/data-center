@@ -30,20 +30,22 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
     @Autowired
     private DataAnalysisFeignClient feignClient;
 
-    public Map<String, Object> dataAcquisition() throws InterruptedException, ExecutionException {
+    //建立线程池
+    private static ExecutorService threadPool = new ThreadPoolExecutor(
+            5,
+            100,
+            10,
+            TimeUnit.SECONDS,
+            new ArrayBlockingQueue<>(3),
+            Executors.defaultThreadFactory(),
+            new ThreadPoolExecutor.AbortPolicy()
+    );
 
+    public Map<String, Object> dataAcquisition() throws InterruptedException, ExecutionException {
         Map<String, Object> result = new HashMap<>();
         List<Object> errorList = new ArrayList<>();
         List<DataSourceDo> doList = dataSourceService.getAllDataSource();
-        //建立线程池
-        ExecutorService threadPool = new ThreadPoolExecutor(
-                doList.size(),
-                doList.size(),
-                doList.size(),
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(3),
-                Executors.defaultThreadFactory(),
-                new ThreadPoolExecutor.AbortPolicy());
+
         //创建Callable集合
         List<Callable<Map<String, List<Object>>>> callableList = new ArrayList<>();
         for (DataSourceDo dataSourceDo : doList) {
@@ -58,9 +60,13 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
         List<UnloadingTable> unloadingTableList = new ArrayList<>();
         List<LogisticsInformation> logisticsInformationList = new ArrayList<>();
 
-        //遍历所有数据
-        for (Future<Map<String, List<Object>>> future : futures) {
-            Map<String, List<Object>> dataMap = future.get();
+        futures.stream().parallel().forEach(future -> {
+            Map<String, List<Object>> dataMap = null;
+            try {
+                dataMap = future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                throw new RuntimeException(e);
+            }
             dataMap.forEach((name, list) -> {
                 Object ob = null;
                 if (Objects.equals(name, "errorList")) {
@@ -79,11 +85,10 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
                     list.forEach(o -> unloadingTableList.add((UnloadingTable) o));
                 }
             });
-        }
-        threadPool.shutdown();
+        });
 
         //异步分批发送数据
-        new Thread(() -> {
+        threadPool.execute(() -> {
             //分布式锁
             boolean getLock = false;
             try {
@@ -130,8 +135,10 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
                     futureList.forEach(future -> {
                         try {
                             future.get();
+
                         } catch (InterruptedException | ExecutionException e) {
                             throw new RuntimeException(e);
+
                         }
                     });
 
@@ -144,7 +151,7 @@ public class DataAcquisitionServiceImpl implements DataAcquisitionService, Redis
                 System.out.println("==========================================================================获取锁失败");
             }
 
-        }).start();
+        });
 
         result.put("customerInformation", customerInformationList.size());      //客户信息数据量（int）
         result.put("logisticsInformation", logisticsInformationList.size());    //提单信息数据量（int）

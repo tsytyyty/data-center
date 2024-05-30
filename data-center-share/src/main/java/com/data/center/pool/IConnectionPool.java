@@ -11,4 +11,12 @@ public interface IConnectionPool {
     // 释放连接(可回收机制)
     void release(Connection conn);
 
+    int INITSIZE = 3;
+    int MAXSIZE = 10;
+    int TIMEOUT = 10000;
+    String DIRER = "dm.jdbc.driver.DmDriver";
+    String URL = "jdbc:dm://192.168.1.210:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8";
+    String USERNAME = "SYSDBA";
+    String PASSWORD = "SYSDBA";
+
 }

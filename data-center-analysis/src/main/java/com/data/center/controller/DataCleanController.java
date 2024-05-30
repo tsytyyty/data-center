@@ -35,6 +35,7 @@ public class DataCleanController implements AfterCleanData, OriginalData, RedisC
         }
         if (getLock){
             try {
+
                 dataCleanService.dataClean();
             } catch (ExecutionException | InterruptedException e) {
                 log.error(e.getMessage() + e);

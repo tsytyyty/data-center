@@ -1,13 +1,12 @@
 package com.data.center.pool;
 
-import com.data.center.service.Impl.OpenSqlServiceImpl;
-import com.data.center.utils.DbUtil;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
@@ -37,10 +36,6 @@ public class ConnectionPool implements IConnectionPool {
 //    @Value("${connection.pool.timeout}")
 //    private static long timeout;
 
-    private static int maxSize = 10;
-    private static int initSize = 3;
-    private static long timeout = 10000;
-
 
 //    private volatile static ConnectionPool instance;    //避免指令重拍
 
@@ -61,10 +56,21 @@ public class ConnectionPool implements IConnectionPool {
     }
 
     private void init() {
-        for (int i = 0; i < initSize; i++) {
-            Connection connection = DbUtil.createConnection();
+        for (int i = 0; i < INITSIZE; i++) {
+            Connection connection = createConnection();
             freeConnectPool.offer(connection);
         }
+    }
+
+    private Connection createConnection() {
+        Connection connection = null;
+        try {
+            Class.forName(DIRER);
+            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+        return connection;
     }
 
     @Override
@@ -89,8 +95,8 @@ public class ConnectionPool implements IConnectionPool {
 
         // 通过 activeSize.incrementAndGet() <= maxSize 这个判断
         // 解决 if(activeSize.get() < maxSize) 存在的线程安全问题
-        if (activeSize.incrementAndGet() <= maxSize) {
-            connection = DbUtil.createConnection();// 创建新连接
+        if (activeSize.incrementAndGet() <= MAXSIZE) {
+            connection = createConnection();// 创建新连接
             busyConnectPool.offer(connection);
             return connection;
         }
@@ -99,7 +105,7 @@ public class ConnectionPool implements IConnectionPool {
         // 如果空闲池中连接数达到maxSize， 则阻塞等待归还连接
         try {
             System.out.println("排队等待连接");
-            connection = freeConnectPool.poll(timeout, TimeUnit.MILLISECONDS);// 阻塞获取连接，如果10秒内有其他连接释放
+            connection = freeConnectPool.poll(TIMEOUT, TimeUnit.MILLISECONDS);// 阻塞获取连接，如果10秒内有其他连接释放
             if (connection == null) {
                 System.out.println("等待超时");
                 throw new RuntimeException("等待连接超时");
@@ -116,7 +122,7 @@ public class ConnectionPool implements IConnectionPool {
      */
     private void createConnectionAsync() {
         new Thread(() -> {
-            Connection connection = DbUtil.createConnection();
+            Connection connection = createConnection();
             freeConnectPool.offer(connection);
             activeSize.incrementAndGet();
         }).start();
@@ -149,7 +155,7 @@ public class ConnectionPool implements IConnectionPool {
                 }
                 // 如果连接失效，并且连接数小于等于3，则重新创建一个连接
                 if (!valid && activeSize.get() <= 3) {
-                    connection = DbUtil.createConnection();
+                    connection = createConnection();
                 }
                 freeConnectPool.offer(connection);// 放进一个可用的连接
             } catch (SQLException e) {

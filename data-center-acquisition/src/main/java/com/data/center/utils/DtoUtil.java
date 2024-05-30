@@ -13,35 +13,41 @@ public class DtoUtil {
 
     public static DataSourceDo DataSourceDtoToDo(DataSourceDto dataSourceDto) {
         DataSourceDo dataSourceDo = new DataSourceDo();
+
+        dataSourceDo.setId(dataSourceDto.getId());
         dataSourceDo.setName(dataSourceDto.getName());
         dataSourceDo.setUrl(dataSourceDto.getUrl());
+        dataSourceDo.setUsername(dataSourceDto.getUsername());
         dataSourceDo.setPassword(dataSourceDto.getPassword());
+        dataSourceDo.setBucketName(dataSourceDto.getBucketName());
+        dataSourceDo.setDbName(dataSourceDto.getDbName());
+        dataSourceDo.setType(dataSourceDto.getType());
         Map<String, String> dataAndType = new HashMap<>();
         dataSourceDto.getDataAndType().forEach(s -> {
-            String[] split = s.split("_");
+            String[] split = s.split("!");
             dataAndType.put(split[0], split[1]);
         });
         dataSourceDo.setDataAndType(dataAndType);
-        dataSourceDo.setType(dataSourceDto.getType());
-        dataSourceDo.setId(dataSourceDto.getId());
-        dataSourceDo.setUsername(dataSourceDto.getUsername());
         return dataSourceDo;
     }
 
     //do转dto
     public static DataSourceDto DataSourceDoToDto(DataSourceDo dataSourceDo) {
         DataSourceDto dataSourceDto = new DataSourceDto();
+
+        dataSourceDto.setId(dataSourceDo.getId());
         dataSourceDto.setName(dataSourceDo.getName());
         dataSourceDto.setUrl(dataSourceDo.getUrl());
-        dataSourceDto.setType(dataSourceDo.getType());
-        dataSourceDto.setId(dataSourceDo.getId());
         dataSourceDto.setUsername(dataSourceDo.getUsername());
         dataSourceDto.setPassword(dataSourceDo.getPassword());
-        dataSourceDto.setDbName(dataSourceDo.getDbName());
         dataSourceDto.setBucketName(dataSourceDo.getBucketName());
+        dataSourceDto.setDbName(dataSourceDo.getDbName());
+        dataSourceDto.setType(dataSourceDo.getType());
+
+
         List<String> list = new ArrayList<>();
         dataSourceDo.getDataAndType().forEach((k, v) -> {
-            list.add(k + "_" + v);
+            list.add(k + "!" + v);
         });
         dataSourceDto.setDataAndType(list);
         return dataSourceDto;

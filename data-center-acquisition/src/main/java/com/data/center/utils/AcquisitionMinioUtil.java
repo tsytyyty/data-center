@@ -11,7 +11,7 @@ import java.text.ParseException;
 import java.util.*;
 
 @Slf4j
-public class AcquisitionMinioUtil {
+public class AcquisitionMinioUtil <T> {
 
     public static Map<String, List<Object>> acquisitionToList(String name, AmazonS3 client, String bucketName, Map<String, String> file) {
         // 列出minio文件

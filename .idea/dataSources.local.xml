@@ -48,7 +48,10 @@
       <schema-mapping>
         <introspection-scope>
           <node kind="database" qname="">
-            <node kind="schema" qname="DATA_CENTER_SHARE" />
+            <node kind="schema">
+              <name qname="DATA_CENTER_SHARE" />
+              <name qname="SYS" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>
@@ -64,9 +67,28 @@
         <introspection-scope>
           <node kind="database" qname="">
             <node kind="schema">
+              <name qname="DATA_CENTER_SHARE" />
               <name qname="DATA_CENTER_ACQUISITION" />
               <name qname="DATA_CENTER_ANALYSIS" />
             </node>
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="阿里云mysql" uuid="cc610b59-da02-45fc-a291-85cf41974dbf">
+      <database-info product="MySQL" version="5.7.44" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="5.7.44" exact-driver-version="8.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema">
+            <name qname="a" />
+            <name qname="@" />
+            <name qname="information_schema" />
           </node>
         </introspection-scope>
       </schema-mapping>

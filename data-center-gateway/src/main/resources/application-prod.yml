@@ -5,7 +5,7 @@ spring:
     name: api-gateway #服务名称
   cloud:
     nacos:
-      server-addr: 10.7.32.53:8848
+      server-addr: 127.0.0.1:8848
       discovery:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
         group: data-center-group
@@ -38,9 +38,7 @@ spring:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]':
-            allowedOrigins:
-              - "http://localhost:8080"
-              - "http://localhost:10010"
+            allowedOriginPatterns: "*"
             allowedMethods:
               - "GET"
               - "POST"

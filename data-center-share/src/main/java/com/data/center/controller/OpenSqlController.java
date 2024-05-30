@@ -45,7 +45,7 @@ public class OpenSqlController {
     public Result saveResult(@RequestParam String username){
         //建立数据库表
         int code = openSqlService.saveData(username);
-        return new Result(0, code == 200 ? "保存成功！" : "保存失败，数据为空", null);
+        return new Result(code == 200 ? 0 : 404, code == 200 ? "保存成功！" : "保存失败，数据为空", null);
     }
 
 

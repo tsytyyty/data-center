@@ -102,6 +102,9 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
      */
     @Async
     public Future<Void> customerInformation(){
+        if (clean_customer_information.size() == 0){
+            return new AsyncResult<>(null);
+        }
         customerInformationMapper.dropTable();
         customerInformationMapper.createTable();
         for (int i = 0; i <= clean_customer_information.size(); i += 3000){
@@ -115,6 +118,9 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
     }
     @Async
     public Future<Void> logisticsInformation(){
+        if (clean_logistics_information.size() == 0){
+            return new AsyncResult<>(null);
+        }
         logisticsInformationMapper.dropTable();
         logisticsInformationMapper.createTable();
         for (int i = 0; i <= clean_logistics_information.size(); i += 3000){
@@ -128,6 +134,9 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
     }
     @Async
     public Future<Void> loadingTable(){
+        if (clean_loading_table.size() == 0){
+            return new AsyncResult<>(null);
+        }
         loadingTableMapper.dropTable();
         loadingTableMapper.createTable();
         for (int i = 0; i <= clean_loading_table.size(); i += 2000){
@@ -141,6 +150,9 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
     }
     @Async
     public Future<Void> unloadingTable(){
+        if (clean_unloading_table.size() == 0){
+            return new AsyncResult<>(null);
+        }
         unloadingTableMapper.dropTable();
         unloadingTableMapper.createTable();
         for (int i = 0; i <= clean_unloading_table.size(); i += 2000){
@@ -159,42 +171,58 @@ public class SynchronizationServiceImpl implements SynchronizationService, After
      */
     @Async
     public Future<Void> tabulateData(){
-        resultMapper.tabulateData(totalData);
+        if (totalData.size() != 0){
+            resultMapper.tabulateData(totalData);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> portThroughput(){
-        resultMapper.portThroughput(portThroughputList);
+        if (portThroughputList.size() != 0){
+            resultMapper.portThroughput(portThroughputList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> goodsThroughput(){
-        resultMapper.goodsThroughput(goodsThroughputList);
+        if (goodsThroughputList.size() != 0){
+            resultMapper.goodsThroughput(goodsThroughputList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> portGoodsThroughput(){
-        resultMapper.portGoodsThroughput(portGoodsThroughputList);
+        if (portGoodsThroughputList.size() != 0){
+            resultMapper.portGoodsThroughput(portGoodsThroughputList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> portGoodsInput(){
-        resultMapper.portGoodsInput(portGoodsInputList);
+        if (portGoodsInputList.size() != 0){
+            resultMapper.portGoodsInput(portGoodsInputList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> portGoodsOutput(){
-        resultMapper.portGoodsOutput(portGoodsOutputList);
+        if (portGoodsOutputList.size() != 0){
+            resultMapper.portGoodsOutput(portGoodsOutputList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> yoyQoqEveryYear(){
-        resultMapper.yoyQoqEveryYear(portYoyQoqList);
+        if (portYoyQoqList.size() != 0){
+            resultMapper.yoyQoqEveryYear(portYoyQoqList);
+        }
         return new AsyncResult<>(null);
     }
     @Async
     public Future<Void> portGoodsFlowTime(){
-        resultMapper.portGoodsFlowTime(portGoodsFlowTimeList);
+        if (portGoodsFlowTimeList.size() != 0){
+            resultMapper.portGoodsFlowTime(portGoodsFlowTimeList);
+        }
         return new AsyncResult<>(null);
     }
 

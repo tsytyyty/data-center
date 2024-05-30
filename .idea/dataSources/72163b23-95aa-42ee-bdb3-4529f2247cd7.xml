@@ -41,752 +41,778 @@
     <table id="31" parent="15" name="prediction"/>
     <table id="32" parent="15" name="tabulate_data"/>
     <table id="33" parent="15" name="unloading_table"/>
-    <column id="34" parent="18" name="id">
+    <table id="34" parent="15" name="visual"/>
+    <column id="35" parent="18" name="id">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="35" parent="18" name="username">
+    <column id="36" parent="18" name="username">
       <DasType>VARCHAR(255)|12s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="36" parent="18" name="PASSWORD">
+    <column id="37" parent="18" name="PASSWORD">
       <DasType>VARCHAR(255)|12s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="37" parent="18" name="real_name">
+    <column id="38" parent="18" name="real_name">
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>4</Position>
     </column>
-    <column id="38" parent="18" name="id_card">
+    <column id="39" parent="18" name="id_card">
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>5</Position>
     </column>
-    <column id="39" parent="18" name="phone">
+    <column id="40" parent="18" name="phone">
       <DasType>VARCHAR(20)|12s</DasType>
       <Position>6</Position>
     </column>
-    <column id="40" parent="18" name="email">
+    <column id="41" parent="18" name="email">
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>7</Position>
     </column>
-    <column id="41" parent="18" name="active">
+    <column id="42" parent="18" name="active">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <index id="42" parent="18" name="INDEX33556428">
+    <index id="43" parent="18" name="INDEX33556428">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="43" parent="18" name="INDEX33556429">
+    <index id="44" parent="18" name="INDEX33556429">
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="44" parent="18" name="CONS134219277">
+    <key id="45" parent="18" name="CONS134219277">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="45" parent="18" name="INDEX33556429">
+    <key id="46" parent="18" name="INDEX33556429">
       <ColNames>username</ColNames>
     </key>
-    <column id="46" parent="19" name="id">
+    <column id="47" parent="19" name="id">
       <Comment>主键，数据源ID</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="47" parent="19" name="name">
+    <column id="48" parent="19" name="name">
       <Comment>名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="48" parent="19" name="url">
+    <column id="49" parent="19" name="url">
       <Comment>地址</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="49" parent="19" name="username">
+    <column id="50" parent="19" name="username">
       <Comment>用户名</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>4</Position>
     </column>
-    <column id="50" parent="19" name="password">
+    <column id="51" parent="19" name="password">
       <Comment>密码</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>5</Position>
     </column>
-    <column id="51" parent="19" name="bucket_name">
+    <column id="52" parent="19" name="bucket_name">
       <Comment>桶名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>6</Position>
     </column>
-    <column id="52" parent="19" name="db_name">
+    <column id="53" parent="19" name="db_name">
       <Comment>数据库名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>7</Position>
     </column>
-    <column id="53" parent="19" name="data_and_type">
+    <column id="54" parent="19" name="data_and_type">
       <Comment>数据表（文件名）- 类型</Comment>
       <DasType>VARCHAR(8888)|12s</DasType>
       <Position>8</Position>
     </column>
-    <column id="54" parent="19" name="type">
+    <column id="55" parent="19" name="type">
       <Comment>数据源类型</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>9</Position>
     </column>
-    <index id="55" parent="19" name="INDEX33556196">
+    <index id="56" parent="19" name="INDEX33556196">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="56" parent="19" name="CONS134219160">
+    <key id="57" parent="19" name="CONS134219160">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="57" parent="20" name="id">
+    <column id="58" parent="20" name="id">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="58" parent="20" name="user_id">
+    <column id="59" parent="20" name="user_id">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="59" parent="20" name="ticket">
+    <column id="60" parent="20" name="ticket">
       <DasType>VARCHAR(255)|12s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="60" parent="20" name="power">
+    <column id="61" parent="20" name="power">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="61" parent="20" name="status">
+    <column id="62" parent="20" name="status">
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="62" parent="20" name="INDEX33556420">
+    <index id="63" parent="20" name="INDEX33556420">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="63" parent="20" name="CONS134219272">
+    <key id="64" parent="20" name="CONS134219272">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="64" parent="21" name="id">
+    <column id="65" parent="21" name="id">
       <Comment>主键</Comment>
       <DasType>BIGINT(19)|-5s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="65" parent="21" name="name">
+    <column id="66" parent="21" name="name">
       <Comment>客户姓名</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="66" parent="21" name="id_card">
+    <column id="67" parent="21" name="id_card">
       <Comment>身份证号码</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="67" parent="21" name="phone_number">
+    <column id="68" parent="21" name="phone_number">
       <Comment>电话号码</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>4</Position>
     </column>
-    <column id="68" parent="21" name="address">
+    <column id="69" parent="21" name="address">
       <Comment>地址</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>5</Position>
     </column>
-    <column id="69" parent="21" name="remark">
+    <column id="70" parent="21" name="remark">
       <Comment>备注</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>6</Position>
     </column>
-    <index id="70" parent="21" name="INDEX33556481">
+    <index id="71" parent="21" name="INDEX33556523">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="71" parent="21" name="CONS134219303">
+    <key id="72" parent="21" name="CONS134219322">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="72" parent="22" name="id">
+    <column id="73" parent="22" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="73" parent="22" name="goods">
+    <column id="74" parent="22" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="74" parent="22" name="throughput">
+    <column id="75" parent="22" name="throughput">
       <Comment>吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>3</Position>
     </column>
-    <column id="75" parent="22" name="percentage">
+    <column id="76" parent="22" name="percentage">
       <Comment>占比</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>4</Position>
     </column>
-    <index id="76" parent="22" name="INDEX33556242">
+    <index id="77" parent="22" name="INDEX33556507">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="77" parent="22" name="CONS134219183">
+    <key id="78" parent="22" name="CONS134219315">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="78" parent="23" name="id">
+    <column id="79" parent="23" name="id">
       <Comment>id</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="79" parent="23" name="ship_companies">
+    <column id="80" parent="23" name="ship_companies">
       <Comment>船公司</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="80" parent="23" name="ship_name">
+    <column id="81" parent="23" name="ship_name">
       <Comment>船名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="81" parent="23" name="work_begin_time">
+    <column id="82" parent="23" name="work_begin_time">
       <Comment>作业开始时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>4</Position>
     </column>
-    <column id="82" parent="23" name="work_end_time">
+    <column id="83" parent="23" name="work_end_time">
       <Comment>作业结束时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>5</Position>
     </column>
-    <column id="83" parent="23" name="departure_time">
+    <column id="84" parent="23" name="departure_time">
       <Comment>始发时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>6</Position>
     </column>
-    <column id="84" parent="23" name="arrive_time">
+    <column id="85" parent="23" name="arrive_time">
       <Comment>到达时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>7</Position>
     </column>
-    <column id="85" parent="23" name="port">
+    <column id="86" parent="23" name="port">
       <Comment>作业港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>8</Position>
     </column>
-    <column id="86" parent="23" name="logistics_id">
+    <column id="87" parent="23" name="logistics_id">
       <Comment>提单号</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>9</Position>
     </column>
-    <column id="87" parent="23" name="container_id">
+    <column id="88" parent="23" name="container_id">
       <Comment>集装箱箱号</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>10</Position>
     </column>
-    <column id="88" parent="23" name="container_size">
+    <column id="89" parent="23" name="container_size">
       <Comment>箱尺寸（TEU）</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>11</Position>
     </column>
-    <column id="89" parent="23" name="departure_place">
+    <column id="90" parent="23" name="departure_place">
       <Comment>启运地</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>12</Position>
     </column>
-    <column id="90" parent="23" name="destination_place">
+    <column id="91" parent="23" name="destination_place">
       <Comment>目的地</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>13</Position>
     </column>
-    <column id="91" parent="23" name="remark">
+    <column id="92" parent="23" name="remark">
       <Comment>备注</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>14</Position>
     </column>
-    <index id="92" parent="23" name="INDEX33556485">
+    <index id="93" parent="23" name="INDEX33556527">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="93" parent="23" name="CONS134219305">
+    <key id="94" parent="23" name="CONS134219324">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="94" parent="24" name="id">
+    <column id="95" parent="24" name="id">
       <Comment>主键</Comment>
       <DasType>BIGINT(19)|-5s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="95" parent="24" name="logistics_id">
+    <column id="96" parent="24" name="logistics_id">
       <Comment>提单号</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="96" parent="24" name="owner">
+    <column id="97" parent="24" name="owner">
       <Comment>所有者</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="97" parent="24" name="owner_id">
+    <column id="98" parent="24" name="owner_id">
       <Comment>所有者ID</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>4</Position>
     </column>
-    <column id="98" parent="24" name="company_id">
+    <column id="99" parent="24" name="company_id">
       <Comment>公司ID</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>5</Position>
     </column>
-    <column id="99" parent="24" name="container_id">
+    <column id="100" parent="24" name="container_id">
       <Comment>集装箱ID</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>6</Position>
     </column>
-    <column id="100" parent="24" name="goods_name">
+    <column id="101" parent="24" name="goods_name">
       <Comment>货物名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>7</Position>
     </column>
-    <column id="101" parent="24" name="weight">
+    <column id="102" parent="24" name="weight">
       <Comment>重量（单位：kg）</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>8</Position>
     </column>
-    <column id="102" parent="24" name="remark">
+    <column id="103" parent="24" name="remark">
       <Comment>备注</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>9</Position>
     </column>
-    <index id="103" parent="24" name="INDEX33556483">
+    <index id="104" parent="24" name="INDEX33556525">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="104" parent="24" name="CONS134219304">
+    <key id="105" parent="24" name="CONS134219323">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="105" parent="25" name="id">
+    <column id="106" parent="25" name="id">
       <Comment>唯一标识</Comment>
       <DasType>BIGINT(19)|-5s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="106" parent="25" name="port">
+    <column id="107" parent="25" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="107" parent="25" name="goods">
+    <column id="108" parent="25" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="108" parent="25" name="flow_time">
+    <column id="109" parent="25" name="flow_time">
       <Comment>平均流转时间（小时）</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>4</Position>
     </column>
-    <index id="109" parent="25" name="INDEX33556346">
+    <index id="110" parent="25" name="INDEX33556517">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="110" parent="25" name="CONS134219235">
+    <key id="111" parent="25" name="CONS134219320">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="111" parent="26" name="id">
+    <column id="112" parent="26" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="112" parent="26" name="port">
+    <column id="113" parent="26" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="113" parent="26" name="goods">
+    <column id="114" parent="26" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="114" parent="26" name="INPUT">
+    <column id="115" parent="26" name="INPUT">
       <Comment>入口量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="115" parent="26" name="percentage">
+    <column id="116" parent="26" name="percentage">
       <Comment>占比</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>5</Position>
     </column>
-    <index id="116" parent="26" name="INDEX33556246">
+    <index id="117" parent="26" name="INDEX33556511">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="117" parent="26" name="CONS134219185">
+    <key id="118" parent="26" name="CONS134219317">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="118" parent="27" name="id">
+    <column id="119" parent="27" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="119" parent="27" name="port">
+    <column id="120" parent="27" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="120" parent="27" name="goods">
+    <column id="121" parent="27" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="121" parent="27" name="output">
+    <column id="122" parent="27" name="output">
       <Comment>出口</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="122" parent="27" name="percentage">
+    <column id="123" parent="27" name="percentage">
       <Comment>占比</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>5</Position>
     </column>
-    <index id="123" parent="27" name="INDEX33556248">
+    <index id="124" parent="27" name="INDEX33556513">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="124" parent="27" name="CONS134219186">
+    <key id="125" parent="27" name="CONS134219318">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="125" parent="28" name="id">
+    <column id="126" parent="28" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="126" parent="28" name="port">
+    <column id="127" parent="28" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="127" parent="28" name="goods">
+    <column id="128" parent="28" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="128" parent="28" name="throughput">
+    <column id="129" parent="28" name="throughput">
       <Comment>吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="129" parent="28" name="percentage">
+    <column id="130" parent="28" name="percentage">
       <Comment>占比</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>5</Position>
     </column>
-    <index id="130" parent="28" name="INDEX33556244">
+    <index id="131" parent="28" name="INDEX33556509">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="131" parent="28" name="CONS134219184">
+    <key id="132" parent="28" name="CONS134219316">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="132" parent="29" name="id">
+    <column id="133" parent="29" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="133" parent="29" name="port">
+    <column id="134" parent="29" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="134" parent="29" name="throughput">
+    <column id="135" parent="29" name="throughput">
       <Comment>吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>3</Position>
     </column>
-    <column id="135" parent="29" name="percentage">
+    <column id="136" parent="29" name="percentage">
       <Comment>占比</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>4</Position>
     </column>
-    <index id="136" parent="29" name="INDEX33556240">
+    <index id="137" parent="29" name="INDEX33556505">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="137" parent="29" name="CONS134219182">
+    <key id="138" parent="29" name="CONS134219314">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="138" parent="30" name="id">
+    <column id="139" parent="30" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="139" parent="30" name="port">
+    <column id="140" parent="30" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="140" parent="30" name="year">
+    <column id="141" parent="30" name="YEAR">
       <Comment>年份</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>3</Position>
     </column>
-    <column id="141" parent="30" name="month">
+    <column id="142" parent="30" name="MONTH">
       <Comment>月份</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="142" parent="30" name="throughput">
+    <column id="143" parent="30" name="throughput">
       <Comment>吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>5</Position>
     </column>
-    <column id="143" parent="30" name="yoy">
+    <column id="144" parent="30" name="yoy">
       <Comment>同比增长率</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>6</Position>
     </column>
-    <column id="144" parent="30" name="qoq">
+    <column id="145" parent="30" name="qoq">
       <Comment>环比增长率</Comment>
       <DasType>DECIMAL(10,2)|3s</DasType>
       <Position>7</Position>
     </column>
-    <index id="145" parent="30" name="INDEX33556250">
+    <index id="146" parent="30" name="INDEX33556515">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="146" parent="30" name="CONS134219187">
+    <key id="147" parent="30" name="CONS134219319">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="147" parent="31" name="id">
+    <column id="148" parent="31" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="148" parent="31" name="port">
+    <column id="149" parent="31" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="149" parent="31" name="goods">
+    <column id="150" parent="31" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="150" parent="31" name="throughput1">
+    <column id="151" parent="31" name="throughput1">
       <Comment>第一月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="151" parent="31" name="throughput2">
+    <column id="152" parent="31" name="throughput2">
       <Comment>第二月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>5</Position>
     </column>
-    <column id="152" parent="31" name="throughput3">
+    <column id="153" parent="31" name="throughput3">
       <Comment>第三月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>6</Position>
     </column>
-    <column id="153" parent="31" name="throughput4">
+    <column id="154" parent="31" name="throughput4">
       <Comment>第四月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>7</Position>
     </column>
-    <column id="154" parent="31" name="throughput5">
+    <column id="155" parent="31" name="throughput5">
       <Comment>第五月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>8</Position>
     </column>
-    <column id="155" parent="31" name="throughput6">
+    <column id="156" parent="31" name="throughput6">
       <Comment>第六月</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>9</Position>
     </column>
-    <column id="156" parent="31" name="total">
+    <column id="157" parent="31" name="total">
       <Comment>总吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>10</Position>
     </column>
-    <index id="157" parent="31" name="INDEX33556489">
+    <index id="158" parent="31" name="INDEX33556519">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="158" parent="31" name="prediction_port_index">
+    <index id="159" parent="31" name="prediction_port_index">
       <ColNames>port</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="159" parent="31" name="prediction_goods_index">
+    <index id="160" parent="31" name="prediction_goods_index">
       <ColNames>goods</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="160" parent="31" name="CONS134219307">
+    <key id="161" parent="31" name="CONS134219321">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="161" parent="31" name="prediction_port_index">
+    <key id="162" parent="31" name="prediction_port_index">
       <ColNames>port</ColNames>
     </key>
-    <key id="162" parent="31" name="prediction_goods_index">
+    <key id="163" parent="31" name="prediction_goods_index">
       <ColNames>goods</ColNames>
     </key>
-    <column id="163" parent="32" name="id">
+    <column id="164" parent="32" name="id">
       <Comment>唯一标识</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="164" parent="32" name="port">
+    <column id="165" parent="32" name="port">
       <Comment>港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="165" parent="32" name="goods">
+    <column id="166" parent="32" name="goods">
       <Comment>货物</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="166" parent="32" name="year">
+    <column id="167" parent="32" name="YEAR">
       <Comment>年份</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>4</Position>
     </column>
-    <column id="167" parent="32" name="month">
+    <column id="168" parent="32" name="MONTH">
       <Comment>月份</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>5</Position>
     </column>
-    <column id="168" parent="32" name="throughPut">
+    <column id="169" parent="32" name="throughPut">
       <Comment>吞吐量</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>6</Position>
     </column>
-    <index id="169" parent="32" name="INDEX33556238">
+    <index id="170" parent="32" name="INDEX33556503">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="170" parent="32" name="CONS134219181">
+    <key id="171" parent="32" name="CONS134219313">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="171" parent="33" name="id">
+    <column id="172" parent="33" name="id">
       <Comment>id</Comment>
       <DasType>INT(10)|4s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="172" parent="33" name="ship_companies">
+    <column id="173" parent="33" name="ship_companies">
       <Comment>船公司</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>2</Position>
     </column>
-    <column id="173" parent="33" name="ship_name">
+    <column id="174" parent="33" name="ship_name">
       <Comment>船名称</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>3</Position>
     </column>
-    <column id="174" parent="33" name="work_begin_time">
+    <column id="175" parent="33" name="work_begin_time">
       <Comment>作业开始时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>4</Position>
     </column>
-    <column id="175" parent="33" name="work_end_time">
+    <column id="176" parent="33" name="work_end_time">
       <Comment>作业结束时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>5</Position>
     </column>
-    <column id="176" parent="33" name="departure_time">
+    <column id="177" parent="33" name="departure_time">
       <Comment>始发时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>6</Position>
     </column>
-    <column id="177" parent="33" name="arrive_time">
+    <column id="178" parent="33" name="arrive_time">
       <Comment>到达时间</Comment>
       <DasType>DATETIME(39,6)|93s</DasType>
       <Position>7</Position>
     </column>
-    <column id="178" parent="33" name="port">
+    <column id="179" parent="33" name="port">
       <Comment>作业港口</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>8</Position>
     </column>
-    <column id="179" parent="33" name="logistics_id">
+    <column id="180" parent="33" name="logistics_id">
       <Comment>提单号</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>9</Position>
     </column>
-    <column id="180" parent="33" name="container_id">
+    <column id="181" parent="33" name="container_id">
       <Comment>集装箱箱号</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>10</Position>
     </column>
-    <column id="181" parent="33" name="container_size">
+    <column id="182" parent="33" name="container_size">
       <Comment>箱尺寸（TEU）</Comment>
       <DasType>INT(10)|4s</DasType>
       <Position>11</Position>
     </column>
-    <column id="182" parent="33" name="departure_place">
+    <column id="183" parent="33" name="departure_place">
       <Comment>启运地</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>12</Position>
     </column>
-    <column id="183" parent="33" name="destination_place">
+    <column id="184" parent="33" name="destination_place">
       <Comment>目的地</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>13</Position>
     </column>
-    <column id="184" parent="33" name="remark">
+    <column id="185" parent="33" name="remark">
       <Comment>备注</Comment>
       <DasType>VARCHAR(255)|12s</DasType>
       <Position>14</Position>
     </column>
-    <index id="185" parent="33" name="INDEX33556487">
+    <index id="186" parent="33" name="INDEX33556529">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="186" parent="33" name="CONS134219306">
+    <key id="187" parent="33" name="CONS134219325">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="188" parent="34" name="id">
+      <Comment>唯一标识</Comment>
+      <DasType>INT(10)|4s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="189" parent="34" name="description">
+      <Comment>描述</Comment>
+      <DasType>VARCHAR(255)|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="190" parent="34" name="url">
+      <Comment>url</Comment>
+      <DasType>VARCHAR(255)|12s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="191" parent="34" name="INDEX33556493">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="192" parent="34" name="CONS134219308">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

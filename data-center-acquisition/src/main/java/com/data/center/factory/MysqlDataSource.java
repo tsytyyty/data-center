@@ -112,7 +112,7 @@ public class MysqlDataSource implements DataSource, AcquisitionConstant {
         }
         //检查数据源信息中文件是否存在
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("Show tables from " + dbName + ";");
+        ResultSet rs = stmt.executeQuery("show tables from " + dbName + ";");
         Set<String> dbTableSet = new HashSet<>();
 
         while(rs.next()) {

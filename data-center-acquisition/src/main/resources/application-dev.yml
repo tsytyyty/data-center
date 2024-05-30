@@ -7,21 +7,21 @@ spring:
     name: acquisition-server
   cloud:
     nacos:
-      server-addr: 10.4.53.14:8848
-#      server-addr: 192.168.1.210:8848    #服务器
+#      server-addr: 127.0.0.1:8848
+      server-addr: 192.168.1.210:8848    #服务器
       discovery:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
         group: data-center-group
   datasource:
     driver-class-name: dm.jdbc.driver.DmDriver
-#    url: jdbc:dm://10.4.53.14:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
-    url: jdbc:dm://10.7.32.53:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+#    url: jdbc:dm://127.0.0.1:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:dm://192.168.1.210:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
     username: SYSDBA
     password: SYSDBA
   data:
     redis:
-      host: 10.4.53.14    #本机
-#      host: 10.7.32.53
+#      host: 127.0.0.1    #本机
+      host: 192.168.1.210
       port: 6379
       database: 0
 

@@ -89,17 +89,6 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/DmJdbcDriver18.jar</systemPath>
         </dependency>
-<!--        &lt;!&ndash; swagger依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springdoc</groupId>-->
-<!--            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
-<!--            <version>2.1.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springdoc</groupId>-->
-<!--            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>-->
-<!--            <version>2.1.0</version>-->
-<!--        </dependency>-->
         <!-- feign依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -119,7 +108,8 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson-spring-boot-starter</artifactId>
-            <version>3.23.5</version>
+<!--            <version>3.23.5</version>-->
+            <version>3.26.0</version>
         </dependency>
         <!-- mybatisPlus 核心库 -->
         <dependency>
@@ -159,5 +149,18 @@
             <version>21.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

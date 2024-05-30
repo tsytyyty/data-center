@@ -12,11 +12,11 @@ import java.util.Objects;
 
 public interface VisualService {
 
-    Map<String, List<PortGoodsThroughputVo>> selectPortGoodsThroughput();
-
-    Map<String, List<PortYoyQoqVo>> selectPortYoyQoq(int year);
-
-    Map<String, Object> selectPortTotal(String port);
+//    Map<String, List<PortGoodsThroughputVo>> selectPortGoodsThroughput();
+//
+//    Map<String, List<PortYoyQoqVo>> selectPortYoyQoq(int year);
+//
+//    Map<String, Object> selectPortTotal(String port);
 
     List<VisualVo> getAllVisualUrl();
 

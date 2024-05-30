@@ -7,26 +7,28 @@ spring:
     name: share-server
   cloud:
     nacos:
-      server-addr: 10.4.53.14:8848    # 本机
-#      server-addr: 192.168.1.210:8848    #服务器
+#      server-addr: 127.0.0.1:8848    # 本机
+      server-addr: 192.168.1.210:8848    #服务器
       discovery:
         group: data-center-group
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
   datasource:
     primary:
       driver-class: dm.jdbc.driver.DmDriver
-      jdbc-url: jdbc:dm://10.7.32.53:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+#      jdbc-url: jdbc:dm://192.168.1.210:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      jdbc-url: jdbc:dm://127.0.0.1:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
       username: SYSDBA
       password: SYSDBA
     secondary:
       driver-class: dm.jdbc.driver.DmDriver
-      jdbc-url: jdbc:dm://59.110.34.218:30236/"data_center_share"?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+#      jdbc-url: jdbc:dm://192.168.1.210:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      jdbc-url: jdbc:dm://127.0.0.1:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
       username: SYSDBA
-      password: SYSDBA001
+      password: SYSDBA
   data:
     redis:
-      host: 10.7.32.53    #服务器
-#      host: 10.4.53.14
+#      host: 192.168.1.210    #服务器
+      host: 127.0.0.1
       port: 6379
       database: 0
 
@@ -50,6 +52,16 @@ mybatis-plus:
       table-underline: true
   mapper-locations: classpath*:com/data/center/mapper/xml/*Mapper.xml
   type-aliases-package: com.data.center.pojo.Do
+
+pool:
+  driver: dm.jdbc.driver.DmDriver
+  url: jdbc:dm://192.168.1.210:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+  username: SYSDBA
+  password: SYSDBA
+  initSize: 3
+  maxSize: 10
+  timeout: 10000
+
 
 
 

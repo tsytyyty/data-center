@@ -22,46 +22,48 @@ public class VisualController {
     private VisualService visualService;
 
     /**
-     * 所有港口商品吞吐量
-     */
-    @GetMapping("/portGoodsThroughput")
-    public Result portGoodsThroughput() {
-        //查询
-        Map<String, List<PortGoodsThroughputVo>> map = visualService.selectPortGoodsThroughput();
-        return Result.success("查询成功！", map);
-    }
-
-    /**
-     * 某年份所有港口同比环比
-     */
-    @GetMapping("/YoYQoQ")
-    public Result YoYQoQ(@RequestParam int year) {
-        //查询
-        Map<String, List<PortYoyQoqVo>> map = visualService.selectPortYoyQoq(year);
-        if (map == null){
-            return Result.error("暂无该年份数据！");
-        }
-        return Result.success("查询成功！", map);
-    }
-
-
-    /**
-     * 港口大报表
-     */
-    @GetMapping("/portTotal")
-    public Result portTotal(@RequestParam String port) {
-        //查询
-        Map<String, Object> map = visualService.selectPortTotal(port);
-        return Result.success("查询成功！",map);
-    }
-
-    /**
      * 查询所有可视化图表URL
      */
     @GetMapping("/getAllVisualUrl")
     public Result getAllVisualUrl() {
         return Result.success("查询成功！", visualService.getAllVisualUrl());
     }
+
+//    /**
+//     * 所有港口商品吞吐量
+//     */
+//    @GetMapping("/portGoodsThroughput")
+//    public Result portGoodsThroughput() {
+//        //查询
+//        Map<String, List<PortGoodsThroughputVo>> map = visualService.selectPortGoodsThroughput();
+//        return Result.success("查询成功！", map);
+//    }
+//
+//    /**
+//     * 某年份所有港口同比环比
+//     */
+//    @GetMapping("/YoYQoQ")
+//    public Result YoYQoQ(@RequestParam int year) {
+//        //查询
+//        Map<String, List<PortYoyQoqVo>> map = visualService.selectPortYoyQoq(year);
+//        if (map == null){
+//            return Result.error("暂无该年份数据！");
+//        }
+//        return Result.success("查询成功！", map);
+//    }
+//
+//
+//    /**
+//     * 港口大报表
+//     */
+//    @GetMapping("/portTotal")
+//    public Result portTotal(@RequestParam String port) {
+//        //查询
+//        Map<String, Object> map = visualService.selectPortTotal(port);
+//        return Result.success("查询成功！",map);
+//    }
+
+
 
 
 

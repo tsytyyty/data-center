@@ -14,21 +14,22 @@ import java.util.List;
 @Qualifier("PrimarySqlSessionTemplate")
 public interface VisualMapper {
 
-    // 港货物吞吐量
-    List<PortGoodsThroughputVo> selectPortGoodsThroughput(@Param("port") String port);
-
-    // xx港吞吐量同比环比
-    List<PortYoyQoqVo> selectPortYoyQoq(int year);
-
-    // 港总吞吐量
-    List<PortThroughputVo> selectPortThroughput();
-
-    // xx港货物平均周转时间
-    List<PortGoodsFlowTimeVo> selectPortGoodsFlowTime(String port);
-
-    // xx港xx货物未来六月预测
-    List<PredictionVo> selectPrediction(@Param("port") String port);
-
     @Select("select DESCRIPTION,URL from VISUAL;")
     List<VisualVo> selectVisualVo();
+
+//    // 港货物吞吐量
+//    List<PortGoodsThroughputVo> selectPortGoodsThroughput(@Param("port") String port);
+//
+//    // xx港吞吐量同比环比
+//    List<PortYoyQoqVo> selectPortYoyQoq(int year);
+//
+//    // 港总吞吐量
+//    List<PortThroughputVo> selectPortThroughput();
+//
+//    // xx港货物平均周转时间
+//    List<PortGoodsFlowTimeVo> selectPortGoodsFlowTime(String port);
+//
+//    // xx港xx货物未来六月预测
+//    List<PredictionVo> selectPrediction(@Param("port") String port);
+
 }

@@ -7,20 +7,21 @@ spring:
     name: acquisition-server
   cloud:
     nacos:
-      server-addr: 10.7.32.53:8848
+      server-addr: 127.0.0.1:8848
       discovery:
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
         group: data-center-group
   datasource:
     driver-class-name: dm.jdbc.driver.DmDriver
-    url: jdbc:dm://10.4.53.14:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:dm://127.0.0.1:5236/data_center_acquisition?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
     username: SYSDBA
     password: SYSDBA
   data:
     redis:
-      host: 10.7.32.53
+      host: 127.0.0.1
       port: 6379
       database: 0
+
 
 springdoc:
   swagger-ui:
@@ -43,5 +44,16 @@ mybatis-plus:
   mapper-locations: classpath*:com/data/center/mapper/xml/*Mapper.xml
   type-aliases-package: com.data.center.pojo.Do
 
+# 动态线程池管理配置
+dynamic:
+  thread:
+    pool:
+      config:
+        # 状态；true = 开启、false 关闭
+        enabled: true
+        # redis host
+        host: 127.0.0.1
+        # redis port
+        port: 6379
 
 

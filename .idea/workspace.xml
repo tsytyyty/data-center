@@ -4,37 +4,381 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="Tongweb内嵌版本">
-      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pojo/vo/PredictionVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pojo/vo/VisualVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/脚本/prediction.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/脚本/简介.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/脚本/预测.xlsx" afterDir="false" />
+    <list default="true" id="75495cae-97a8-435e-ab44-bf3dc57ce486" name="更改" comment="前端+文档">
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.env.development" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.env.staging" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/README.es.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/README.ja.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/README.zh-CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/jest.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/mock-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/remote-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/role/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/role/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/mock/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/component/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/component/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/store/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/store/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/view/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plop-templates/view/prompt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/plopfile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/postcss.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/public/RC.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/api/article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/api/qiniu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/api/remote-search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/api/role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/api/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/401_images/401.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/404_images/404.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/404_images/404_cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/06.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/09.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/27.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/chartPic/28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/custom-theme/fonts/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/custom-theme/fonts/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/assets/custom-theme/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/BackToTop/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Breadcrumb/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Charts/Keyboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Charts/LineMarker.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Charts/MixChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Charts/mixins/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/DndList/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/DragSelect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Dropzone/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ErrorLog/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/GithubCorner/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Hamburger/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/HeaderSearch/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ImageCropper/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ImageCropper/utils/data2blob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ImageCropper/utils/effectRipple.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ImageCropper/utils/language.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ImageCropper/utils/mimes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/JsonEditor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Kanban/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/MDinput/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/MarkdownEditor/default-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/MarkdownEditor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Pagination/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/PanThumb/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/RightPanel/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Screenfull/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Share/DropdownMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/SizeSelect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/SqlEditor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Sticky/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/SvgIcon/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/TextHoverEffect/Mallki.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/ThemePicker/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Tinymce/components/EditorImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Tinymce/dynamicLoadScript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Tinymce/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Tinymce/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Tinymce/toolbar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Upload/SingleImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Upload/SingleImage2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/Upload/SingleImage3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/components/UploadExcel/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/clipboard/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/clipboard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/el-drag-dialog/drag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/el-drag-dialog/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/el-table/adaptive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/el-table/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/permission/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/permission/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/sticky.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/waves/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/waves/waves.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/directive/waves/waves.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/filters/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/404.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/bug.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/clipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/component.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/dashboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/documentation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/drag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/education.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/example.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/excel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/exit-fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/eye-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/form.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/guide.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/international.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/language.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/lock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/message.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/money.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/nested.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/password.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/pdf.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/people.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/peoples.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/qq.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/shopping.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/size.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/skill.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/theme.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/tree-table.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/tree.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/wechat.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svg/zip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/icons/svgo.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/AppMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Navbar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Settings/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/FixiOSBug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/Item.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/Link.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/Logo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/SidebarItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/Sidebar/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/TagsView/ScrollPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/TagsView/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/layout/mixin/ResizeHandler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/router/modules/charts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/router/modules/components.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/router/modules/nested.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/router/modules/table.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/getters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/errorLog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/tagsView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/store/modules/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/btn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/element-ui.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/element-variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/mixin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/styles/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/clipboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/error-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/get-page-title.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/open-window.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/scroll-to.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/utils/validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/vendor/Export2Excel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/vendor/Export2Zip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/BarChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/BoxCard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/LineChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/PanelGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/PieChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/RaddarChart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/TodoList/Todo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/TodoList/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/TodoList/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/TransactionTable.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/components/mixins/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/admin/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/editor/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/dashboard/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/documentation/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/documentation/rulesPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/error-log/components/ErrorTestA.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/error-log/components/ErrorTestB.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/error-log/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/error-page/401.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/error-page/404.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/DataChartList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/board.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/chart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/components/ChartForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/dataDetails.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/guide/steps.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/login/auth-redirect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/login/components/SocialSignin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/login/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/components/SwitchRoles.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/components/TabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/components/TabPane2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/components/TabPane3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/components/TabPane4.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/permission/page.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/redirect/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/TabPane.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/TabPane2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/TabPane3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/TabPane4.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/sql1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/sql2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/sql3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/components/sql4.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/data-map.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/dataStorage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/index1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/index2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/show-JSON.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/share-data/sql-work.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/user/permission/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/user/reg/Kanban/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/user/reg/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/src/views/user/userdata/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/components/Hamburger.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/components/SvgIcon.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/utils/formatTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/utils/param2Obj.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/utils/parseTime.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/tests/unit/utils/validate.spec.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Freedom（前端）/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data-center-common/lib/dynamic-thread-pool-spring-boot-starter.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/data/tabulate_fix.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/disadventageFront.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/model/best_loss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/model/model.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/onehot.pt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/基于深度可分离卷积神经网络的轻量化港口出口量预测模型.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/卸货表2020.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/卸货表2021.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/卸货表2022.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/客户信息2020.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/客户信息2021.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/物流信息2020.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/物流信息2021.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/物流信息2022.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/装货表2020.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/装货表2021.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/数据集/装货表2022.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/customer_information.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/loading_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/logistics_information.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/脚本/unloading_table.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-作品信息概要表.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-作品信息概要表.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-使用说明.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-使用说明.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-技术文档.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-技术文档.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-运行手册.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/2024036364-运行手册.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/设计与开发文档/技术文档.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/JavaSceneConfigState.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9479f8-988b-40be-8266-352dc5d0c86d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a9479f8-988b-40be-8266-352dc5d0c86d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/72163b23-95aa-42ee-bdb3-4529f2247cd7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/72163b23-95aa-42ee-bdb3-4529f2247cd7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8d93f2b1-258a-44e7-96fa-dbb37de92030.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8d93f2b1-258a-44e7-96fa-dbb37de92030.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audit.log" beforeDir="false" afterPath="$PROJECT_DIR$/audit.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/controller/DataSourceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/MysqlDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/factory/MysqlDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/Impl/DataAcquisitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/service/Impl/DataAcquisitionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/AcquisitionMinioUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/AcquisitionMinioUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/java/com/data/center/utils/DtoUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/AcqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-acquisition/src/test/java/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-acquisition/src/test/java/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/controller/DataCleanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/mapper/xml/ResultMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/mapper/xml/ResultMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataAnalysisServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataAnalysisServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataCleanServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/DataCleanServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/SynchronizationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/java/com/data/center/service/Impl/SynchronizationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-analysis/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-common/src/main/java/com/data/center/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/OpenSqlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/OpenSqlController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/controller/VisualController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/VisualMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/VisualMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/xml/VisualMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/mapper/xml/VisualMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/IConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/pool/IConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/Impl/VisualServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/Impl/VisualServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/VisualService.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/service/VisualService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/utils/DbUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/java/com/data/center/utils/DbUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/application-prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-center-share/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-center-share/src/test/java/ConnectTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-center-share/src/test/java/ConnectTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/脚本/天气编码对应表.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/脚本/脚本" beforeDir="false" afterPath="$PROJECT_DIR$/脚本/脚本" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/脚本/预测.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/脚本/吞吐量预测结果.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,28 +427,30 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "database.data.extractors.current.export.id": "SQL-Insert-Statements.sql.groovy",
+    "database.data.extractors.current.export.id": "SQL-Insert-Multirow.sql.groovy",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/project/IntelliJ IDEA 2022.2.2/data_center_microservices/脚本",
+    "last_opened_file_path": "D:/project/IntelliJ IDEA 2022.2.2/data_center_microservices",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
+    "project.structure.last.edited": "库",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35517243",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "spring.boot",
     "spring.configuration.checksum": "132712756ebee285ed78fbcc77bad4ef",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mysql",
-      "java.sql.Driver"
+      "java.sql.Driver",
+      "mysql"
     ],
     "RunConfigurationTargetLRU": [
-      "6a9479f8-988b-40be-8266-352dc5d0c86d/database/\"\"#1/schema/\"DATA_CENTER_ANALYSIS\""
+      "6a9479f8-988b-40be-8266-352dc5d0c86d/database/\"\"#1/schema/\"DATA_CENTER_ANALYSIS\"",
+      "cc610b59-da02-45fc-a291-85cf41974dbf",
+      "cc610b59-da02-45fc-a291-85cf41974dbf/schema/\"a\""
     ]
   }
 }]]></component>
@@ -113,13 +459,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\脚本" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-share\src\main\resources" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-analysis\src\main\resources" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\resources" />
-      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-acquisition\src\main\java\com\data\center\mapper\xml" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices" />
+      <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-common\lib" />
       <recent name="D:\project\IntelliJ IDEA 2022.2.2\data_center_microservices\data-center-anlysis" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -143,17 +491,11 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConnectTest.test">
-    <configuration name="prediction.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
-      <script-file value="$PROJECT_DIR$/脚本/prediction.sql" />
-      <script-mode>FILE</script-mode>
-      <data-source id="6a9479f8-988b-40be-8266-352dc5d0c86d" namespace="database/&amp;quot;&amp;quot;#1/schema/&quot;DATA_CENTER_ANALYSIS&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ConnectTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="data-center-share" />
+  <component name="RunManager" selected="Spring Boot.AnalysisApplication">
+    <configuration name="AcqTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="data-center-acquisition" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ConnectTest" />
+      <option name="MAIN_CLASS_NAME" value="AcqTest" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -199,20 +541,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ShareApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="data-center-share" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.data.center.ShareApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.data.center.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="JUnit.ConnectTest.test" />
+      <item itemvalue="JUnit.AcqTest.test" />
       <item itemvalue="Spring Boot.AcquisitionApplication" />
       <item itemvalue="Spring Boot.AnalysisApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="数据库脚本.prediction.sql" />
+      <item itemvalue="Spring Boot.ShareApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.AcquisitionApplication" />
         <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.AnalysisApplication" />
-        <item itemvalue="Spring Boot.AcquisitionApplication" />
-        <item itemvalue="JUnit.ConnectTest.test" />
-        <item itemvalue="数据库脚本.prediction.sql" />
+        <item itemvalue="Spring Boot.ShareApplication" />
+        <item itemvalue="JUnit.AcqTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +603,38 @@
       <workItem from="1713768243297" duration="41282000" />
       <workItem from="1713940789459" duration="12174000" />
       <workItem from="1714008083566" duration="2000" />
-      <workItem from="1714020378844" duration="36909000" />
+      <workItem from="1714020378844" duration="43644000" />
+      <workItem from="1714132383738" duration="10733000" />
+      <workItem from="1714271740621" duration="5342000" />
+      <workItem from="1714624738586" duration="1618000" />
+      <workItem from="1714641492736" duration="692000" />
+      <workItem from="1714715556099" duration="892000" />
+      <workItem from="1714716962557" duration="2942000" />
+      <workItem from="1714723283086" duration="11591000" />
+      <workItem from="1714739657582" duration="1301000" />
+      <workItem from="1714741266843" duration="729000" />
+      <workItem from="1714793161882" duration="1226000" />
+      <workItem from="1714794490080" duration="4969000" />
+      <workItem from="1715001519427" duration="8657000" />
+      <workItem from="1715056277242" duration="3599000" />
+      <workItem from="1715071393134" duration="1531000" />
+      <workItem from="1715080834939" duration="4192000" />
+      <workItem from="1715262513280" duration="666000" />
+      <workItem from="1715334313822" duration="10000" />
+      <workItem from="1715348563035" duration="4000" />
+      <workItem from="1715397147675" duration="5000" />
+      <workItem from="1715419233291" duration="15000" />
+      <workItem from="1715657805368" duration="383000" />
+      <workItem from="1715753017624" duration="3728000" />
+      <workItem from="1715772373971" duration="1390000" />
+      <workItem from="1715851466068" duration="9413000" />
+      <workItem from="1716037876631" duration="2715000" />
+      <workItem from="1716116503836" duration="7000" />
+      <workItem from="1716368658634" duration="2304000" />
+      <workItem from="1716448448136" duration="1290000" />
+      <workItem from="1716901385656" duration="1797000" />
+      <workItem from="1716972795510" duration="599000" />
+      <workItem from="1717071926474" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="2024.3.22">
       <created>1711111784893</created>
@@ -299,11 +685,24 @@
       <option name="project" value="LOCAL" />
       <updated>1713881752115</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="可视化接口">
+      <created>1714084721019</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714084721019</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/参赛材料/素材与源码/Freedom（前端）/node_modules/@vue/cli-plugin-unit-jest/generator/template/tests/unit/example.spec.js" />
+        <option value="$PROJECT_DIR$/Freedom（前端）/node_modules/@vue/cli-plugin-unit-jest/generator/template/tests/unit/example.spec.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -325,7 +724,9 @@
     <MESSAGE value="tongweb调试" />
     <MESSAGE value="前端调试" />
     <MESSAGE value="Tongweb内嵌版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tongweb内嵌版本" />
+    <MESSAGE value="可视化接口" />
+    <MESSAGE value="前端+文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端+文档" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

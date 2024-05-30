@@ -7,24 +7,24 @@ spring:
     name: share-server
   cloud:
     nacos:
-      server-addr: 10.7.32.53:8848
+      server-addr: 127.0.0.1:8848
       discovery:
         group: data-center-group
         namespace: 9aae8ce7-f7bc-4167-9fdf-234082701131
   datasource:
     primary:
       driver-class: dm.jdbc.driver.DmDriver
-      jdbc-url: jdbc:dm://10.4.53.14:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      jdbc-url: jdbc:dm://127.0.0.1:5236/data_center_analysis?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
       username: SYSDBA
       password: SYSDBA
     secondary:
       driver-class: dm.jdbc.driver.DmDriver
-      jdbc-url: jdbc:dm://59.110.34.218:30236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
+      jdbc-url: jdbc:dm://127.0.0.1:5236/data_center_share?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf-8
       username: SYSDBA
-      password: SYSDBA001
+      password: SYSDBA
   data:
     redis:
-      host: 10.7.32.53
+      host: 127.0.0.1
       port: 6379
       database: 0
 

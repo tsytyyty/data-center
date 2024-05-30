@@ -34,6 +34,8 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
 
     @Override
     public void dataClean() throws ExecutionException, InterruptedException {
+        //clear缓存数据
+        clearAfterCleanData();
 
         customerInformationClean().run();
         logisticsInformationClean().run();
@@ -44,6 +46,20 @@ public class DataCleanServiceImpl implements DataCleanService, OriginalData, Aft
         // 同步数据到数据库
         synchronizationService.synchronizationAfterClean();
 
+    }
+
+    private void clearAfterCleanData() {
+        idCardSet.clear();
+        clean_customer_information.clear();
+
+        logisticsInformationMap.clear();
+        clean_logistics_information.clear();
+
+        loadingTableSet.clear();
+        clean_loading_table.clear();
+
+        unloadingTableSet.clear();
+        clean_unloading_table.clear();
     }
 
     //客户信息过滤
